@@ -16,7 +16,12 @@
   font-size: 30px;
 }
 
-.grid-buttons {
+
+
+.grid-container-buttons  {
+  display: grid;
+  grid-template-columns: auto auto;
+  /*grid-gap: 10px;*/
   border-radius: 8px;
   min-height: 40vh;
   grid-row: 1 / 4;
@@ -24,6 +29,8 @@
   border-style: solid;
   border-color: #582841;
   background-color: ghostwhite;
+  padding: 10px;
+
 }
 
 .grid-saeule {
@@ -51,7 +58,7 @@
   height: 15vh;
   /*min-width: 12vh;*/
   width: 22vh;
-  margin: 0px 15px 5px 5px;
+  margin: auto;
   font-size: 22px;
 }
 
