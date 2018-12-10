@@ -1,11 +1,12 @@
 .grid-container {
   min-height: 80vh;
-  max-height: 100vmax;
+  /*max-height: 100vmax;*/
   display: grid;
   grid-template-columns: 30vw 17vw 17vw 17vw 17vw;
   grid-gap: 2px;
   background-color: #582841;
   padding: auto;
+  word-break: break-word;
 }
 
 .grid-container > div {
