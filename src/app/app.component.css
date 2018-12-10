@@ -1,0 +1,74 @@
+.grid-container {
+  min-height: 80vh;
+  max-height: 100vmax;
+  display: grid;
+  grid-template-columns: 30vw 17vw 17vw 17vw 17vw;
+  grid-gap: 2px;
+  background-color: #582841;
+  padding: auto;
+}
+
+.grid-container > div {
+  /*background-color: white;*/
+  text-align: center;
+  /*padding: 20px 0;*/
+  font-size: 30px;
+}
+
+.grid-buttons {
+  border-radius: 33px;
+  min-height: 40vh;
+  grid-row: 1 / 4;
+  grid-column: 1 / 2;
+  border-style: solid;
+  border-color: #582841;
+  background-color: ghostwhite;
+}
+
+.grid-saeule {
+  border-radius: 33px;
+  border-style: solid;
+  border-color: #582841;
+  grid-row: 1/6;
+  min-height: 80vh;
+  max-height: 100vh;
+}
+
+.grid-calender {
+  border-radius: 33px;
+  min-height: 30vh;
+  grid-row: 4/6;
+  grid-column: 1/2;
+  border-style: solid;
+  border-color: #582841;
+  background-color: ghostwhite;
+}
+
+.button-card {
+  border-radius: 33px;
+  /*min-height: 10vh;*/
+  height: 15vh;
+  /*min-width: 12vh;*/
+  width: 22vh;
+  margin: 0px 15px 0px 5px;
+}
+
+.menu {
+  font-size: 22px;
+  background-color: #582841;
+  color: white;
+}
+
+.card-saeule {
+  border-radius: 25px;
+  min-height:75vh;
+  max-height: 100vh;
+  background-color: ghostwhite;
+  text-align: center;
+}
+
+.leereSaeule {
+
+  background-color: white;
+  min-height: 85vh;
+}
