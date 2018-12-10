@@ -16,7 +16,7 @@
 }
 
 .grid-buttons {
-  border-radius: 33px;
+  border-radius: 8px;
   min-height: 40vh;
   grid-row: 1 / 4;
   grid-column: 1 / 2;
@@ -26,7 +26,7 @@
 }
 
 .grid-saeule {
-  border-radius: 33px;
+  border-radius: 8px;
   border-style: solid;
   border-color: #582841;
   grid-row: 1/6;
@@ -35,7 +35,7 @@
 }
 
 .grid-calender {
-  border-radius: 33px;
+  border-radius: 8px;
   min-height: 30vh;
   grid-row: 4/6;
   grid-column: 1/2;
@@ -45,7 +45,7 @@
 }
 
 .button-card {
-  border-radius: 33px;
+  border-radius: 5px;
   /*min-height: 10vh;*/
   height: 15vh;
   /*min-width: 12vh;*/
@@ -61,7 +61,7 @@
 }
 
 .card-saeule {
-  border-radius: 25px;
+  border-radius: 8px;
   min-height:75vh;
   max-height: 100vh;
   background-color: ghostwhite;
