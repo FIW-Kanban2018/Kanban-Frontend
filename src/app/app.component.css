@@ -1,0 +1,83 @@
+.grid-container {
+  min-height: 80vh;
+  /*max-height: 100vmax;*/
+  display: grid;
+  grid-template-columns: 30vw 17vw 17vw 17vw 17vw;
+  grid-gap: 2px;
+  background-color: #582841;
+  padding: auto;
+  word-break: break-word;
+}
+
+.grid-container > div {
+  /*background-color: white;*/
+  text-align: center;
+  /*padding: 20px 0;*/
+  font-size: 30px;
+}
+
+
+
+.grid-container-buttons  {
+  display: grid;
+  grid-template-columns: auto auto;
+  /*grid-gap: 10px;*/
+  border-radius: 8px;
+  min-height: 40vh;
+  grid-row: 1 / 4;
+  grid-column: 1 / 2;
+  border-style: solid;
+  border-color: #582841;
+  background-color: ghostwhite;
+  padding: 10px;
+
+}
+
+.grid-saeule {
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #582841;
+  grid-row: 1/6;
+  min-height: 80vh;
+  max-height: 100vh;
+}
+
+.grid-calender {
+  border-radius: 8px;
+  min-height: 30vh;
+  grid-row: 4/6;
+  grid-column: 1/2;
+  border-style: solid;
+  border-color: #582841;
+  background-color: ghostwhite;
+}
+
+.button-card {
+  border-radius: 8px;
+  /*min-height: 10vh;*/
+  height: 15vh;
+  /*min-width: 12vh;*/
+  width: 22vh;
+  margin: auto;
+  font-size: 22px;
+}
+
+.menu {
+  font-size: 22px;
+  background-color: #582841;
+  color: white;
+}
+
+.card-saeule {
+  border-radius: 8px;
+  min-height:75vh;
+  max-height: 100vh;
+  background-color: ghostwhite;
+  text-align: center;
+}
+
+.leereSaeule {
+
+  background-color: white;
+  min-height: 85vh;
+}
