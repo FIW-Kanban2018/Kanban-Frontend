@@ -10,12 +10,15 @@ import { MatMenuModule} from "@angular/material";
 import { MatIconModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
-import { TelefonatComponent } from './telefonat/telefonat.component';
+import { TelefonatComponent } from './board/telefonat/telefonat.component';
+
+import { BoardComponent } from './board/board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TelefonatComponent
+    TelefonatComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,
