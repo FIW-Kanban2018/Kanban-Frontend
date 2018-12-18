@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule} from "@angular/material";
+import { MatMenuModule} from '@angular/material';
 import { MatIconModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { TelefonatComponent } from './board/telefonat/telefonat.component';
-
 import { BoardComponent } from './board/board.component';
+import { MatDialogModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -29,10 +31,14 @@ import { BoardComponent } from './board/board.component';
     MatMenuModule,
     MatIconModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatRadioModule
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[TelefonatComponent]
 })
 export class AppModule { }

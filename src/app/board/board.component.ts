@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { TelefonatComponent } from './telefonat/telefonat.component';
 
 @Component({
   selector: 'app-board',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+    private dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
+
+  newTelefonat(){
+    //noch nicht fertig
+    // const dialogConfig = new MatDialogConfig();
+    // dialogConfig.disableClose = true;
+    // dialogConfig.autoFocus = true;
+    // dialogConfig.width = '60%';
+    this.dialog.open(TelefonatComponent);
+  }
 }

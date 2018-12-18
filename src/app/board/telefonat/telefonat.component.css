@@ -1,0 +1,36 @@
+
+.text-Center {
+  text-align: center;
+}
+
+.sopraCard{
+  /*background-color: orange;*/
+  max-width: 1200px;
+  width: auto;
+  height: auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.mb{
+  margin-bottom: 20px;
+}
+
+.imageTelefon{
+  height: 100px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
