@@ -1,3 +1,4 @@
+@import '~@angular/material/theming';
 @mixin candy-carousel-typography($config) {
   .candy-carousel {
     font: {
