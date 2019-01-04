@@ -78,13 +78,13 @@
   border-radius: 8px;
   min-height:75vh;
   max-height: 100vh;
-  background-color: #E0E0E0;
+  background-color: #F8F8FF;
   text-align: center;
 }
 
 .leereSaeule {
 
-  background-color: white;
+  background-color: #FEFEFF;
   min-height: 85vh;
 }
 .person-icon {
