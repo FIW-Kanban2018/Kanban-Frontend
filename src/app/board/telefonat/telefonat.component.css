@@ -3,34 +3,39 @@
   text-align: center;
 }
 
-.sopraCard{
-  /*background-color: orange;*/
-  max-width: 1200px;
-  width: auto;
-  height: auto;
-  padding-left: 14px;
-  padding-right: 14px;
-  margin: auto;
-  margin-bottom: 40px;
-}
-
-.mb{
-  margin-bottom: 20px;
-}
-
-.imageTelefon{
-  height: 100px;
-  width: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-}
 
 .example-container {
   display: flex;
   flex-direction: column;
+  padding: 10px 10px 10px 10px;
+
 }
 
 .example-container > * {
+  width: 60vw;
+  height: 25vh;
+
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
   width: 100%;
 }
+
+.example-full-width {
+  width: 100%;
+}
+
+radioinhalt{
+  padding-bottom: 5%;
+
+}
+
+
+
+
+
+
+
+
