@@ -6,14 +6,30 @@
     </mat-card-header>
     <!--<img mat-card-image src="../images/call1.png" alt="Telefon">-->
 
-    <mat-card-content class="example-container">#
+    <mat-card-content class="example-container">
 
       <mat-form-field>
-        <input matInput placeholder="Input">
+
+        <mat-radio-group class="radioinhalt">
+          <mat-radio-button value="1">Geschäftzimmer </mat-radio-button><br><br>
+          <mat-radio-button value="2">Referatsübergreifend </mat-radio-button><br><br>
+          <mat-radio-button value="3">langfristige Termine</mat-radio-button><br>
+        </mat-radio-group>
+        <br>
+        <input  matInput placeholder="Name" type="text" id="name" name="name" required
+               size="26">
+        <br>
+        <input matInput placeholder="Telefonnummer" type="tel" id="telnumber" name="telnumber" required
+               size="10">
+        <input matInput placeholder="Datum" type="date" id="datum" name="datum" required
+               size="10">
+        <br>
+        <textarea matInput placeholder="Notizen"></textarea>
+
       </mat-form-field>
 
-
     </mat-card-content>
+
     <mat-card-actions>
       <button mat-raised-button color="warn">Speichern</button>
       <button mat-raised-button color="accent">Abbrechen</button>
