@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material';
 import { MatMenuModule} from '@angular/material';
 import { MatIconModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
@@ -15,7 +16,8 @@ import { BoardComponent } from './board/board.component';
 import { MatDialogModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material/radio';
-
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -27,8 +29,10 @@ import { MatRadioModule } from '@angular/material/radio';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     CommonModule,
+    FormsModule,
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
@@ -36,7 +40,8 @@ import { MatRadioModule } from '@angular/material/radio';
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatRadioModule
+    MatRadioModule,
+    MatInputModule,
 
   ],
   providers: [],
