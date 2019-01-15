@@ -55,6 +55,7 @@
 }
 
 .button-card {
+  background-color: red;
   border-radius: 8px;
   /*min-height: 10vh;*/
   height: 14vh;
@@ -64,9 +65,10 @@
   font-size: 22px;
 
 }
+
 .button-card:hover {
   background-color:transparent;
-  color:#FF6E40;
+  color: red;
 }
 
 .menu {
@@ -99,4 +101,85 @@
   margin: auto;
   background-color: white;
 
+}
+
+.button-card2 {
+  background-color: darkolivegreen;
+  border-radius: 8px;
+  /*min-height: 10vh;*/
+  height: 14vh;
+  /*min-width: 12vh;*/
+  width: 13vw;
+  margin: auto;
+  font-size: 22px;
+}
+
+.button-card2:hover {
+  background-color:transparent;
+  color: darkolivegreen;
+}
+
+.button-card3 {
+  background-color: indigo;
+  border-radius: 8px;
+  /*min-height: 10vh;*/
+  height: 14vh;
+  /*min-width: 12vh;*/
+  width: 13vw;
+  margin: auto;
+  font-size: 22px;
+}
+
+.button-card3:hover {
+  background-color:transparent;
+  color: indigo;
+}
+
+
+.button-card4 {
+  background-color: yellow;
+  border-radius: 8px;
+  /*min-height: 10vh;*/
+  height: 14vh;
+  /*min-width: 12vh;*/
+  width: 13vw;
+  margin: auto;
+  font-size: 22px;
+}
+
+.button-card4:hover {
+  background-color:transparent;
+  color: yellow;
+}
+
+.button-card5 {
+  background-color: darkorange;
+  border-radius: 8px;
+  /*min-height: 10vh;*/
+  height: 14vh;
+  /*min-width: 12vh;*/
+  width: 13vw;
+  margin: auto;
+  font-size: 22px;
+}
+
+.button-card5:hover {
+  background-color:transparent;
+  color: darkorange;
+}
+
+.button-card6 {
+  background-color: #77416c;
+  border-radius: 8px;
+  /*min-height: 10vh;*/
+  height: 14vh;
+  /*min-width: 12vh;*/
+  width: 13vw;
+  margin: auto;
+  font-size: 22px;
+}
+
+.button-card6:hover {
+  background-color:transparent;
+  color: #77416c;
 }
