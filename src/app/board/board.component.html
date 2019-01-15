@@ -11,10 +11,8 @@
     <button mat-raised-button class="button-card2" (click)="newDringend()">Dringend</button>
     <button mat-raised-button class="button-card" (click)="newTelefonat()">Telefonat</button>
 
-
     <button mat-raised-button class="button-card3" (click)="newVeranstaltung()">Veranstaltung</button>
     <button mat-raised-button class="button-card4" (click)="newMitarbeiter()">Mitarbeiter anmelden</button>
-
 
     <button mat-raised-button class="button-card5" (click)="newWanderkarte()">Wanderkarte</button>
     <button mat-raised-button class="button-card6" (click)="newSonstiges()">Sonstiges</button>
@@ -26,13 +24,44 @@
   <div class="grid-saeule">
     <mat-card class="card-saeule">
       <mat-card-title>Geschäftszimmer</mat-card-title>
-      <mat-card-content class="leereSaeule"></mat-card-content>
+      <mat-card-content class="leereSaeule">
+        <div class="example-container">
+
+          <div
+            cdkDropList
+            #todoList="cdkDropList"
+            [cdkDropListData]="todo"
+            [cdkDropListConnectedTo]="[doneList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+          </div>
+        </div>
+
+
+
+
+      </mat-card-content>
     </mat-card>
   </div>
+
   <div class="grid-saeule">
     <mat-card class="card-saeule">
       <mat-card-title>Referatsübergreifend</mat-card-title>
-      <mat-card-content class="leereSaeule"></mat-card-content>
+      <mat-card-content class="leereSaeule">
+        <div class="example-container">
+           <div
+            cdkDropList
+            #doneList="cdkDropList"
+            [cdkDropListData]="done"
+            [cdkDropListConnectedTo]="[todoList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+          </div>
+        </div>
+
+      </mat-card-content>
     </mat-card>
   </div>
   <div class="grid-saeule">

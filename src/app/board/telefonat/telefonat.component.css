@@ -2,8 +2,6 @@
   text-align: center;
 }
 
-
-
 .example-container {
   display: flex;
   flex-direction: column;
@@ -11,12 +9,17 @@
 
 .example-container > * {
   width: 600px;
-
 }
 
 .radioinhalt{
   padding-bottom: 5%;
+}
+
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
 
 }
+
 
 
