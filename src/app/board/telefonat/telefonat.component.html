@@ -38,8 +38,8 @@
 
 
   <mat-card-actions>
-    <button mat-raised-button type="submit" (click)="onSubmit()" color="primary">Speichern</button>
-    <button mat-raised-button color="accent">Abbrechen</button>
+    <button mat-raised-button [mat-dialog-close]="snackBarRef " type="submit" (click)="onSubmit()" color="primary">Speichern</button>
+    <button mat-raised-button mat-dialog-close color="accent">Abbrechen</button>
   </mat-card-actions>
 
 </mat-card>

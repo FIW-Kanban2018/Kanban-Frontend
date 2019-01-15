@@ -26,7 +26,8 @@ import { DringendComponent} from './board/dringend/dringend.component';
 import { MitarbeiterComponent} from './board/mitarbeiter/mitarbeiter.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import {ScrollDispatchModule} from '@angular/cdk/scrolling';
+import { MatSnackBarModule} from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -58,11 +59,12 @@ import {ScrollDispatchModule} from '@angular/cdk/scrolling';
     MatDividerModule,
     MatDatepickerModule,
     DragDropModule,
-    ScrollDispatchModule
+    MatSnackBarModule
+
 
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[TelefonatComponent, DringendComponent, VeranstaltungComponent, MitarbeiterComponent, SonstigesComponent, WanderkarteComponent]
+  entryComponents: [BoardComponent, TelefonatComponent, DringendComponent, VeranstaltungComponent, MitarbeiterComponent, SonstigesComponent, WanderkarteComponent]
 })
 export class AppModule { }
