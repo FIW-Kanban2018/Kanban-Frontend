@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {MatSnackBar} from '@angular/material';
+
 
 @Component({
   selector: 'app-telefonat',
@@ -10,7 +12,7 @@ import {Observable} from 'rxjs';
 
 export class TelefonatComponent implements OnInit {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public snackBarRef: MatSnackBar) {}
 
   urlServer:string = 'http://localhost:8080/telefonat';
   @Input('ngModel')
@@ -46,6 +48,7 @@ export class TelefonatComponent implements OnInit {
       err => {
         console.log("Error occured");
       });
+    this.snackBarRef.open('Karte wurde angelegt!' , 'Oki Doki', {duration: 1500});
 
 
     // let req = this.http.post(this.urlServer + '/new', data)
