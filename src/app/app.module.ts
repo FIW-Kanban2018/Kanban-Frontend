@@ -24,6 +24,8 @@ import { SonstigesComponent } from './board/sonstiges/sonstiges.component';
 import { WanderkarteComponent } from './board/wanderkarte/wanderkarte.component';
 import { DringendComponent} from './board/dringend/dringend.component';
 import { MitarbeiterComponent} from './board/mitarbeiter/mitarbeiter.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { MitarbeiterComponent} from './board/mitarbeiter/mitarbeiter.component';
     MatRadioModule,
     MatInputModule,
     MatDividerModule,
+    MatDatepickerModule,
+    DragDropModule
 
   ],
   providers: [],

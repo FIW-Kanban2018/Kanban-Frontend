@@ -2,12 +2,12 @@ import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-
 @Component({
   selector: 'app-telefonat',
   templateUrl: './telefonat.component.html',
   styleUrls: ['./telefonat.component.css'],
 })
+
 export class TelefonatComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
