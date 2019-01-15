@@ -8,6 +8,8 @@ import { VeranstaltungComponent} from './veranstaltung/veranstaltung.component';
 import { WanderkarteComponent} from './wanderkarte/wanderkarte.component';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
+
+
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -15,6 +17,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class BoardComponent implements OnInit {
 
+  //Die 4 Säulen:
   todo = [
     'Get to work',
     'Pick up groceries',

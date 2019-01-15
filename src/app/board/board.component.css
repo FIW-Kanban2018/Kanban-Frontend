@@ -185,15 +185,17 @@
 }
 
 
-.example-container {
+.dad-container {
   width: 400px;
   max-width: 100%;
   margin: 0 25px 25px 0;
   display: inline-block;
   vertical-align: top;
+
 }
 
-.example-list {
+/*Listeneintrag*/
+.dad-list {
   border: solid 1px #ccc;
   min-height: 60px;
   background: white;
@@ -202,7 +204,7 @@
   display: block;
 }
 
-.example-box {
+.dad-box {
   padding: 20px 10px;
   border-bottom: solid 1px #ccc;
   color: rgba(0, 0, 0, 0.87);
@@ -214,6 +216,7 @@
   cursor: move;
   background: white;
   font-size: 14px;
+  height: 150px;
 }
 
 .cdk-drag-preview {
@@ -232,10 +235,21 @@
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.example-box:last-child {
+.dad-box:last-child {
   border: none;
 }
 
-.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+.dad-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+.example-viewport {
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.example-item {
+  height: 50px;
 }
