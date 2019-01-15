@@ -55,7 +55,7 @@
 }
 
 .button-card {
-  background-color: red;
+  background-color: #FFD347;
   border-radius: 8px;
   /*min-height: 10vh;*/
   height: 14vh;
@@ -68,12 +68,12 @@
 
 .button-card:hover {
   background-color:transparent;
-  color: red;
+  color: #FFD347;
 }
 
 .menu {
   font-size: 24px;
-  background-color: #0097A7;
+  background-color: darkslategrey;
   color:white;
   height: 7vh;
 }
@@ -104,7 +104,7 @@
 }
 
 .button-card2 {
-  background-color: darkolivegreen;
+  background-color: #C40046;
   border-radius: 8px;
   /*min-height: 10vh;*/
   height: 14vh;
@@ -116,11 +116,11 @@
 
 .button-card2:hover {
   background-color:transparent;
-  color: darkolivegreen;
+  color: #C40046;
 }
 
 .button-card3 {
-  background-color: indigo;
+  background-color: #D09EB6;
   border-radius: 8px;
   /*min-height: 10vh;*/
   height: 14vh;
@@ -132,12 +132,12 @@
 
 .button-card3:hover {
   background-color:transparent;
-  color: indigo;
+  color: #D09EB6;
 }
 
 
 .button-card4 {
-  background-color: yellow;
+  background-color: #90C745;
   border-radius: 8px;
   /*min-height: 10vh;*/
   height: 14vh;
@@ -149,11 +149,11 @@
 
 .button-card4:hover {
   background-color:transparent;
-  color: yellow;
+  color: #90C745;
 }
 
 .button-card5 {
-  background-color: darkorange;
+  background-color: #337299;
   border-radius: 8px;
   /*min-height: 10vh;*/
   height: 14vh;
@@ -165,11 +165,11 @@
 
 .button-card5:hover {
   background-color:transparent;
-  color: darkorange;
+  color: #337299;
 }
 
 .button-card6 {
-  background-color: #77416c;
+  background-color: #99E3FA;
   border-radius: 8px;
   /*min-height: 10vh;*/
   height: 14vh;
@@ -181,5 +181,5 @@
 
 .button-card6:hover {
   background-color:transparent;
-  color: #77416c;
+  color: #99E3FA;
 }
