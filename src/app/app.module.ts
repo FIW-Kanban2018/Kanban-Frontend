@@ -11,13 +11,14 @@ import { MatMenuModule} from '@angular/material';
 import { MatIconModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
-import { TelefonatComponent } from './board/telefonat/telefonat.component';
 import { BoardComponent } from './board/board.component';
+import { TelefonatComponent } from './board/telefonat/telefonat.component';
 import { MatDialogModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material/radio';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { FormsModule} from '@angular/forms';
     MatFormFieldModule,
     MatRadioModule,
     MatInputModule,
+    MatDividerModule,
 
   ],
   providers: [],
