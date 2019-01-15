@@ -1,4 +1,20 @@
 @import '~@angular/material/theming';
+
+@include mat-core();
+
+/*
+$telefonat: mat-palette($mat-red, A700);
+$button2: mat-palette($mat-cyan, A400);
+$button3: mat-palette($mat-amber, A500);
+$button4: mat-palette($mat-lime, A500);
+$button5: mat-palette($mat-blue-grey, A500);
+$button6: mat-palette($mat-deep-orange, A700);
+
+$buttonColors: mat-light-theme($telefonat, $button2, $button3, $button4, $button5, $button6);
+
+@include angular-material-theme($buttonColors);
+*/
+
 @mixin candy-carousel-typography($config) {
   .candy-carousel {
     font: {
@@ -8,3 +24,5 @@
     }
   }
 }
+
+
