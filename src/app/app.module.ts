@@ -19,13 +19,22 @@ import { MatRadioModule } from '@angular/material/radio';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
-
+import { VeranstaltungComponent } from './board/veranstaltung/veranstaltung.component';
+import { SonstigesComponent } from './board/sonstiges/sonstiges.component';
+import { WanderkarteComponent } from './board/wanderkarte/wanderkarte.component';
+import { DringendComponent} from './board/dringend/dringend.component';
+import { MitarbeiterComponent} from './board/mitarbeiter/mitarbeiter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TelefonatComponent,
-    BoardComponent
+    BoardComponent,
+    DringendComponent,
+    MitarbeiterComponent,
+    VeranstaltungComponent,
+    SonstigesComponent,
+    WanderkarteComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +57,6 @@ import { MatDividerModule } from '@angular/material/divider';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[TelefonatComponent]
+  entryComponents:[TelefonatComponent, DringendComponent, VeranstaltungComponent, MitarbeiterComponent, SonstigesComponent, WanderkarteComponent]
 })
 export class AppModule { }
