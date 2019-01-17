@@ -1,6 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Component, OnInit} from '@angular/core';
 import {MatRadioChange, MatSnackBar} from '@angular/material';
 import {TelefonatService} from './telefonat.service';
 
@@ -20,13 +18,14 @@ export class TelefonatComponent implements OnInit {
   phoneNumber = '';
   message = '';
   category = '';
-
+  date = '';
   map = new Map();
 
   ngOnInit(){}
 
   onSubmit() {
 
+    this.setData();
     this.telefonatService.sendData(this.map).subscribe(
       res => {
         console.log(res);
@@ -42,11 +41,13 @@ export class TelefonatComponent implements OnInit {
     this.map.set('caller', this.caller)
       .set('message', this.message)
       .set('phonenumber', this.phoneNumber)
+      .set('date', this.date)
       .set('category', this.category);
 
     console.log('caller: ' + this.caller);
     console.log('phone: ' + this.phoneNumber);
     console.log('message: ' + this.message);
+    console.log('date: ' + this.date);
     console.log('category: ' + this.category);
   }
 
@@ -60,6 +61,10 @@ export class TelefonatComponent implements OnInit {
 
   onUpdateMessage(event: Event) {
     this.message = (<HTMLInputElement>event.target).value;
+  }
+
+  onUpdateDate(event: Event) {
+    this.date = (<HTMLInputElement>event.target).value;
   }
 
   changeRadioValue(event: MatRadioChange){
