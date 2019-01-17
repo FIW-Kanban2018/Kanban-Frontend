@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {MatRadioChange, MatSnackBar} from '@angular/material';
+import {TelefonatService} from './telefonat.service';
 
 
 @Component({
@@ -12,7 +13,8 @@ import {MatRadioChange, MatSnackBar} from '@angular/material';
 
 export class TelefonatComponent implements OnInit {
 
-  constructor(private http: HttpClient, public snackBarRef: MatSnackBar) {}
+  constructor(private telefonatService: TelefonatService,
+              public snackBarRef: MatSnackBar) {}
 
   caller = '';
   phoneNumber = '';
@@ -24,27 +26,6 @@ export class TelefonatComponent implements OnInit {
   ngOnInit(){}
 
   onSubmit() {
-    // this.params.set('caller', caller)
-    //    .set('phonenumber', this.phonenumber)
-    //    .set('message', this.message);
-
-    // const headers = new HttpHeaders()
-    //   .set("X-CustomHeader", "custom header value");
-    //
-    // this.map.set('caller', this.caller)
-    //   .set('phonenumber', this.phonenumber)
-    //   .set('message', this.message);
-    // console.log(this.caller);
-    // let urlNew = this.urlServer + '/new'
-    // console.log(urlNew);
-    // let req = this.http.post(urlNew, this.map).subscribe(
-    //   res => {
-    //     console.log(res);
-    //   },
-    //   err => {
-    //     console.log("Error occured");
-    //   });
-
 
     this.telefonatService.sendData(this.map).subscribe(
       res => {
@@ -90,7 +71,7 @@ export class TelefonatComponent implements OnInit {
     console.log('category via event.value' + this.category);
     console.log('event.source.name' + event.source.name);
   }
-  }
+
 
 }
 

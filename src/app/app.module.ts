@@ -27,6 +27,7 @@ import { MitarbeiterComponent} from './board/mitarbeiter/mitarbeiter.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { MatSnackBarModule} from '@angular/material';
+import {TelefonatService} from './board/telefonat/telefonat.service';
 
 
 @NgModule({
