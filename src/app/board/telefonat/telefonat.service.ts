@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
+import {TelefonatComponent} from './telefonat.component';
+import {BoardComponent} from '../board.component';
+import {Telefonat} from './telefonat';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TelefonatService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private boardComopnent: BoardComponent) { }
 
   urlServer = 'http://localhost:8080/telefonat';
 
@@ -33,11 +38,43 @@ export class TelefonatService {
     //   });
   }
 
-  public getTelefonatCard(id: number)  {
+  public getTelefonatCard(id: number):Observable<Telefonat> {
     const urlId = this.urlServer + id;
-    return this.http.get(urlId).subscribe(
-      res => {
-        console.log(res);
-      });
+    return this.http.get<Telefonat>(urlId)
+      .pipe();
+
+      // .subscribe(
+      //   res => {
+      //     console.log(res);
+      //     return res;
+      //   },
+      //   err => {
+      //     console.log("Error occured");
+      //   });;
+  }
+
+  public getAllTelefonatCards():Observable<Telefonat[]> {
+    const urlAll = this.urlServer + "/all";
+    return this.http.get<Telefonat[]>(urlAll)
+      .pipe();
+
+
+      // .subscribe(
+      //   ((telefonat: Map<string, string>) => {
+      //       this.boardComopnent.setTelefonat(telefonat);
+      //     }
+      //   ));
+
+      // .pipe(
+      //   map(responce=>responce.json()),
+      //   map(
+      //   (response: Response) => {
+      //     const data = response.json();
+      //     for (const server of data) {
+      //
+      //     }
+      //     return data;
+      //   }
+
   }
 }

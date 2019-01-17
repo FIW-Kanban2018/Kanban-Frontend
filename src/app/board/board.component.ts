@@ -7,6 +7,9 @@ import { SonstigesComponent} from './sonstiges/sonstiges.component';
 import { VeranstaltungComponent} from './veranstaltung/veranstaltung.component';
 import { WanderkarteComponent} from './wanderkarte/wanderkarte.component';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {TelefonatService} from './telefonat/telefonat.service';
+import {Observable} from 'rxjs';
+import {Telefonat} from './telefonat/telefonat';
 
 
 
@@ -33,6 +36,9 @@ export class BoardComponent implements OnInit {
     'Walk dog'
   ];
 
+  tel: Telefonat[];
+  telefonat:Map<string, string>;
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -45,11 +51,18 @@ export class BoardComponent implements OnInit {
     }
   }
 
-  constructor(
-
-    private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,
+              private telefonatService: TelefonatService) { }
 
   ngOnInit() {
+    //this.telefonatService.getAllTelefonatCards();
+
+    this.getTelefonatCard();
+  }
+
+  getTelefonatCard() {
+    this.telefonatService.getAllTelefonatCards()
+      .subscribe(tele => this.tel = tele);
   }
 
 
