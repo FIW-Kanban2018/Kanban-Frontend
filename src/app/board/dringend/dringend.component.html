@@ -1,10 +1,10 @@
 <mat-card class="example-container">
   <mat-card-header>
-    <mat-card-title>Dringend</mat-card-title>
+    <mat-card-title class="text-Center">Dringend</mat-card-title>
   </mat-card-header>
 
   <mat-card-content class="example-container">
-    
+
    <mat-radio-group class="radioinhalt">
       <br><br>
       <mat-radio-button value="1">Geschäftzimmer</mat-radio-button>
@@ -13,7 +13,7 @@
     </mat-radio-group>
     <br/>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-label>Aufgabe</mat-label>
       <textarea matInput class="textarea" placeholder=""></textarea>
     </mat-form-field>
@@ -21,8 +21,9 @@
     <mat-form-field>
       <mat-label>Termin</mat-label>
       <input matInput type="date" placeholder="">
+      <mat-icon matSuffix>date_range</mat-icon>
     </mat-form-field>
-    
+
   </mat-card-content>
 
   <mat-card-actions>
