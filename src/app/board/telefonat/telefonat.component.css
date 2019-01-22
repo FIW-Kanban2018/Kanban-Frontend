@@ -13,6 +13,7 @@
 
 .radioinhalt {
   padding-bottom: 5%;
+
 }
 
 mat-card-title {
@@ -22,3 +23,4 @@ mat-card-title {
 mat-radio-button {
   padding: 5px;
 }
+

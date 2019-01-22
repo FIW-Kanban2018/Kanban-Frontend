@@ -24,6 +24,11 @@ import { SonstigesComponent } from './board/sonstiges/sonstiges.component';
 import { WanderkarteComponent } from './board/wanderkarte/wanderkarte.component';
 import { DringendComponent} from './board/dringend/dringend.component';
 import { MitarbeiterComponent} from './board/mitarbeiter/mitarbeiter.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { MatSnackBarModule} from '@angular/material';
+import {TelefonatService} from './board/telefonat/telefonat.service';
+
 
 @NgModule({
   declarations: [
@@ -53,10 +58,14 @@ import { MitarbeiterComponent} from './board/mitarbeiter/mitarbeiter.component';
     MatRadioModule,
     MatInputModule,
     MatDividerModule,
+    MatDatepickerModule,
+    DragDropModule,
+    MatSnackBarModule
+
 
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[TelefonatComponent, DringendComponent, VeranstaltungComponent, MitarbeiterComponent, SonstigesComponent, WanderkarteComponent]
+  entryComponents: [BoardComponent, TelefonatComponent, DringendComponent, VeranstaltungComponent, MitarbeiterComponent, SonstigesComponent, WanderkarteComponent]
 })
 export class AppModule { }
