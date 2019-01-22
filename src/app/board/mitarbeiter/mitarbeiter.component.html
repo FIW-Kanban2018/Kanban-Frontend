@@ -1,19 +1,79 @@
-<mat-card class="example-card">
+<mat-card class="example-container">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-title>Mitarbeiter anmelden</mat-card-title>
   </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
+
+  <mat-card-content class="example-container">
+
+    <mat-radio-group class="radioinhalt">
+      <br><br>
+      <mat-radio-button value="1">Geschäftzimmer</mat-radio-button>
+      <mat-radio-button value="2">Referatsübergreifend</mat-radio-button>
+      <mat-radio-button value="3">langfristige Termine</mat-radio-button>
+    </mat-radio-group>
+
+    <br/> <br/>
+
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" placeholder="Name">
+    </mat-form-field>
+
+    <br/> <br/>
+
+    <mat-form-field>
+      <mat-label>Geburtstag</mat-label>
+      <input matInput type="date" placeholder="">
+    </mat-form-field>
+
+    <br/> <br/>
+
+    <mat-radio-group>
+      <mat-radio-button value="intern">intern </mat-radio-button>
+      <mat-radio-button value="extern">extern </mat-radio-button>
+    </mat-radio-group>
+
+    <br/> <br/>
+
+    <mat-form-field>
+      <mat-label>Einsatzdatum</mat-label>
+      <input matInput type="date" placeholder="">
+    </mat-form-field>
+
+    <br/> <br/>
+
+    <mat-form-field>
+      <mat-label>Einsatzort</mat-label>
+      <input matInput type="text" placeholder="Einsatzort">
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field>
+      <mat-label>Aufgabe</mat-label>
+      <input matInput type="text" placeholder="Aufgabe">
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Notiz"></textarea>
+    </mat-form-field>
+
+    <br/> <br/>
+
+    <mat-form-field>
+      <mat-label>Folgeaktivität</mat-label>
+      <input matInput type="text" placeholder="Folgeaktivität">
+    </mat-form-field>
+
+
   </mat-card-content>
+
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <button mat-raised-button color="primary">Speichern</button>
+    <button mat-raised-button color="primary">Abbrechen</button>
   </mat-card-actions>
+
 </mat-card>
+

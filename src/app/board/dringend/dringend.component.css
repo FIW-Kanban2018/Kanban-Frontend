@@ -1,8 +1,27 @@
-.example-card {
-  max-width: 600px;
+
+
+.example-container {
+  display: flex;
+  flex-direction: column;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.example-container > * {
+  width: 600px;
+
 }
+
+.radioinhalt {
+  padding-bottom: 5%;
+}
+
+mat-card-title {
+  color: #C40046;
+}
+
+mat-radio-button {
+  padding: 5px;
+}
+
+
+
+

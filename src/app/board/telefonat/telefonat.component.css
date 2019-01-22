@@ -11,15 +11,16 @@
   width: 600px;
 }
 
-.radioinhalt{
+.radioinhalt {
   padding-bottom: 5%;
-}
-
-.fieldContainer {
-  display: flex;
-  flex-direction: column;
 
 }
 
+mat-card-title {
+  color: #FFD347;
+}
 
+mat-radio-button {
+  padding: 5px;
+}
 

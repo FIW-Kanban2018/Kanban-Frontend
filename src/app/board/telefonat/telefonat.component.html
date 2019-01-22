@@ -1,12 +1,10 @@
 <mat-card class="example-container">
   <mat-card-header>
     <mat-card-title class="text-Center">Telefonat / Gesprächsvermerk</mat-card-title>
-
-     <!-- <img mat-card-image class="img" src="../images/call1.png">-->
-
   </mat-card-header>
 
   <mat-card-content class="example-container">
+
     <mat-radio-group class="radioinhalt" required (change)="changeRadioValue($event)">
       <br><br>
       <mat-radio-button [value]="geschaeft" >Geschäftzimmer</mat-radio-button><br><br>
@@ -36,10 +34,9 @@
 
   </mat-card-content>
 
-
   <mat-card-actions>
     <button mat-raised-button [mat-dialog-close]="snackBarRef " type="submit" (click)="onSubmit()" color="primary">Speichern</button>
-    <button mat-raised-button mat-dialog-close color="accent">Abbrechen</button>
+    <button mat-raised-button mat-dialog-close color="primary">Abbrechen</button>
   </mat-card-actions>
 
 </mat-card>
