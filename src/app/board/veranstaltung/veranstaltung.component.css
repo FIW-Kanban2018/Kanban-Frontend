@@ -1,5 +1,6 @@
 .text-Center {
   text-align: center;
+  font-size: 30px;
 }
 
 .example-container {
@@ -22,3 +23,9 @@ mat-card-title {
 mat-radio-button {
   padding: 5px;
 }
+
+/*
+.intern-extern {
+  padding: 7px;
+}
+*/
