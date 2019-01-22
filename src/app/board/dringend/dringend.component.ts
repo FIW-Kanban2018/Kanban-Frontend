@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-dringend',
@@ -7,9 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DringendComponent implements OnInit {
 
-  constructor() { }
+  constructor(public snackBarRef: MatSnackBar) { }
 
   ngOnInit() {
   }
+
+  // onSubmit(){
+  //   this.setData();
+  //   this.
+  // }
 
 }
