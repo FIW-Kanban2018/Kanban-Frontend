@@ -1,6 +1,6 @@
 <mat-card class="example-container">
   <mat-card-header>
-    <mat-card-title>Veranstaltung</mat-card-title>
+    <mat-card-title class="text-Center">Veranstaltung</mat-card-title>
   </mat-card-header>
 
   <mat-card-content class="example-container">
@@ -14,32 +14,44 @@
     <br/>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Name">
+      <input matInput type="text" placeholder="Titel">
+      <mat-icon matSuffix>text_format</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Geburtsdatum</mat-label>
+      <mat-label>Datum</mat-label>
       <input matInput type="date" placeholder="">
+      <mat-icon matSuffix>date_range</mat-icon>
     </mat-form-field>
 
-    <mat-radio-group>
-      <mat-radio-button value="intern">intern</mat-radio-button>
-      <mat-radio-button value="extern">extern</mat-radio-button>
-    </mat-radio-group>
-    <br/>
-
+    <mat-form-field>
+      <input matInput type="datetime-local" placeholder="Uhrzeit">
+      <mat-icon matSuffix>access_time</mat-icon>
+    </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Einsatzdatum</mat-label>
+      <input matInput type="text" placeholder="Veranstaltungsort">
+      <mat-icon matSuffix>location_on</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Auftraggeber">
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Teilnehmer">
+      <mat-icon matSuffix>people</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <textarea matInput placeholder="To Do:"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Deadline</mat-label>
       <input matInput type="date" placeholder="">
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput type="text" placeholder="Einsatzort">
-    </mat-form-field>
-
-    <mat-form-field>
-      <textarea matInput placeholder="Aufgabe"></textarea>
+      <mat-icon matSuffix>update</mat-icon>
     </mat-form-field>
 
   </mat-card-content>
