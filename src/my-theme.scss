@@ -13,21 +13,9 @@
   }
 }
 // Define your application's custom theme.
-$primary: mat-palette($mat-green, A700);
+$primary: mat-palette($mat-gray, A700);
 $accent:  mat-palette($mat-red, A200, A100, A400);
 $theme: mat-light-theme($primary, $accent);
-
-/*
-$telefonat: mat-palette($mat-red);
-$button2: mat-palette($mat-blue-gray);
-$button3: mat-palette($mat-light-green);
-$button4: mat-palette($mat-yellow);
-$button5: mat-palette($mat-amber);
-$button6: mat-palette($mat-cyan);
-*/
-
-
-
 // Include theme styles for Angular Material components.
 @include angular-material-theme($theme);
 

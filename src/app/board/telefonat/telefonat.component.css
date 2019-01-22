@@ -2,8 +2,6 @@
   text-align: center;
 }
 
-
-
 .example-container {
   display: flex;
   flex-direction: column;
@@ -11,12 +9,16 @@
 
 .example-container > * {
   width: 600px;
-
 }
 
-.radioinhalt{
+.radioinhalt {
   padding-bottom: 5%;
-
 }
 
+mat-card-title {
+  color: #FFD347;
+}
 
+mat-radio-button {
+  padding: 5px;
+}

@@ -1,28 +1,20 @@
 <mat-card class="example-container">
   <mat-card-header>
     <mat-card-title class="text-Center">Telefonat / Gesprächsvermerk</mat-card-title>
-
-     <!-- <img mat-card-image class="img" src="../images/call1.png">-->
-
   </mat-card-header>
 
   <mat-card-content class="example-container">
 
-
     <mat-radio-group class="radioinhalt">
       <br><br>
-      <mat-radio-button value="1">Geschäftzimmer</mat-radio-button><br><br>
-      <mat-radio-button value="2">Referatsübergreifend</mat-radio-button><br><br>
+      <mat-radio-button value="1">Geschäftzimmer</mat-radio-button>
+      <mat-radio-button value="2">Referatsübergreifend</mat-radio-button>
       <mat-radio-button value="3">langfristige Termine</mat-radio-button>
-
     </mat-radio-group>
 
     <mat-form-field>
       <mat-icon matSuffix>person</mat-icon>
-      <input matInput type="text" placeholder="Name" [(ngModel)]="caller">
-
-      <!--<input matInput placeholder="Phone" type="text" [value]="phonenumber">-->
-      <!--<input matInput placeholder="message" type="text" [value]="message">-->
+      <input matInput type="text" placeholder="Name">
     </mat-form-field>
 
     <mat-form-field appearance="legacy">
@@ -40,14 +32,11 @@
       <textarea matInput placeholder="Notiz"></textarea>
     </mat-form-field>
 
-
-
   </mat-card-content>
-
 
   <mat-card-actions>
     <button mat-raised-button type="submit" (click)="onSubmit()" color="primary">Speichern</button>
-    <button mat-raised-button color="accent">Abbrechen</button>
+    <button mat-raised-button color="primary">Abbrechen</button>
   </mat-card-actions>
 
 </mat-card>
