@@ -17,7 +17,10 @@ export class TelefonatComponent implements OnInit {
   caller = '';
   phoneNumber = '';
   message = '';
+  // Auswahl aus {geschaeft, referatsueber, langfristig, done}
   category = '';
+  // Auswahl aus {telefonat, sonstiges, mitarbeiteranmelden, wanderkarte, veranstaltung, dringend}
+  cardCategory = '';
   date = '';
   map = new Map();
 
