@@ -36,6 +36,8 @@ export class BoardComponent implements OnInit {
     'Walk dog'
   ];
 
+  telefonatList: any;
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -50,12 +52,17 @@ export class BoardComponent implements OnInit {
 
   ngOnInit() {
     this.getTelefonatData();
+    this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
   }
 
   getTelefonatData(){
     console.log("test Get data");
-    this.telefonatService.getAllTelefonatCards().subscribe();
-    console.log(this.telefonatService.getAllTelefonatCards().subscribe());
+    console.log("this: " , this);
+    this.telefonatService.getAllTelefonatCards().subscribe((data) =>
+       {
+       console.log(data);
+       this.telefonatList = data;
+      });
   }
 
   newTelefonat(){

@@ -29,6 +29,7 @@ export class TelefonatComponent implements OnInit {
     this.telefonatService.sendData(this.map).subscribe(
       res => {
         console.log(res);
+
       },
       err => {
         console.log("Error occured");

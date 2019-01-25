@@ -64,9 +64,12 @@
   <div class="grid-saeule">
     <mat-card class="card-saeule">
       <mat-card-title>langfristige Termine</mat-card-title>
-      <mat-card-content class="leereSaeule"></mat-card-content>
+      <mat-card-content class="leereSaeule">
+        <div class="dad-box" *ngFor="let item of telefonatList" cdkDrag>{{item.caller}} - {{item.date}}</div>
+      </mat-card-content>
     </mat-card>
   </div>
+
   <div class="grid-saeule">
     <mat-card class="card-saeule">
       <mat-card-title>Done</mat-card-title>
