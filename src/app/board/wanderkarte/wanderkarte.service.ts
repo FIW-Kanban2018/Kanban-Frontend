@@ -9,7 +9,7 @@ export class WanderkarteService {
 
   constructor(private http: HttpClient) { }
 
-  urlServer = 'http://localhost:8080/telefonat';
+  urlServer = 'http://localhost:8080/wanderkarte';
 
 
   public sendData(data: Map<string, string>): Observable<any>  {

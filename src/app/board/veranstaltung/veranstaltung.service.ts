@@ -8,7 +8,7 @@ export class VeranstaltungService{
 
   constructor(private http: HttpClient) { }
 
-  urlServer = 'http://localhost:8080/telefonat';
+  urlServer = 'http://localhost:8080/veranstaltung';
 
 
   public sendData(data: Map<string, string>): Observable<any>  {
