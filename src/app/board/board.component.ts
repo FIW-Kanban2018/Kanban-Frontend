@@ -49,10 +49,13 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getTelefonatData();
   }
 
   getTelefonatData(){
+    console.log("test Get data");
     this.telefonatService.getAllTelefonatCards().subscribe();
+    console.log(this.telefonatService.getAllTelefonatCards().subscribe());
   }
 
   newTelefonat(){

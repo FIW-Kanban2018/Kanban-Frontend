@@ -39,7 +39,7 @@ export class TelefonatService {
   }
 
   public getAllTelefonatCards(): Observable<any>  {
-    const urlId = this.urlServer;
+    const urlId = this.urlServer + "/all";
     return this.http.get(urlId);
   }
 }
