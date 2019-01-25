@@ -33,11 +33,13 @@ export class TelefonatService {
     //   });
   }
 
-  public getTelefonatCard(id: number)  {
+  public getTelefonatCard(id: number): Observable<any> {
     const urlId = this.urlServer + id;
-    return this.http.get(urlId).subscribe(
-      res => {
-        console.log(res);
-      });
+    return this.http.get(urlId);
+  }
+
+  public getAllTelefonatCards(): Observable<any>  {
+    const urlId = this.urlServer;
+    return this.http.get(urlId);
   }
 }
