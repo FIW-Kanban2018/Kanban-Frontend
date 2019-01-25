@@ -12,22 +12,20 @@ export class WanderkarteComponent implements OnInit {
   constructor(private wanderkarteService: WanderkarteService,
               public snackBarRef: MatSnackBar) { }
 
-  von='';
-  fuer='';
-  aufgabe='';
-  titel='';
-  caller = '';
-  phoneNumber = '';
-  message = '';
-  // Auswahl aus {geschaeft, referatsueber, langfristig, done}
-  category = '';
-  // Auswahl aus {telefonat, sonstiges, mitarbeiteranmelden, wanderkarte, veranstaltung, dringend}
-  cardCategory = '';
-  date = '';
-  map = new Map();
-
-
-
+title='';
+type='';
+from='';
+to='';
+date='';
+deadline='';
+message='';
+lastmodified='';
+created='';
+// Auswahl aus {geschaeft, referatsueber, langfristig, done}
+category='';
+// Auswahl aus {telefonat, sonstiges, mitarbeiteranmelden, wanderkarte, veranstaltung, dringend}
+cardCategory = 'wanderkarte';
+map = new Map();
 
 
   ngOnInit(){}
@@ -46,53 +44,59 @@ export class WanderkarteComponent implements OnInit {
     this.snackBarRef.open('Karte wurde angelegt!' , 'Oki Doki', {duration: 1500});
   }
 
-  setData(){
+  setData() {
     this.map
-      .set('message', this.message)
-      .set('phonenumber', this.phoneNumber)
+      .set('title', this.title)
+      .set('type', this.type)
+      .set('from', this.from)
+      .set('to', this.to)
       .set('date', this.date)
+      .set('deadline', this.deadline)
+      .set('message', this.message)
       .set('category', this.category)
-      .set('titel', this.category)
-      .set('von', this.category)
-      .set('fuer', this.category)
-      .set('aufgabe', this.category);
+      .set('cardCategory', this.cardCategory);
 
 
-
-    console.log('phone: ' + this.phoneNumber);
-    console.log('message: ' + this.message);
-    console.log('date: ' + this.date);
-    console.log('category: ' + this.category);
-    console.log('von: ' + this.category);
-    console.log('fuer: ' + this.category);
-    console.log('titel: ' + this.category);
-    console.log('aufgabe: ' + this.category);
+    console.log('title' + this.title);
+    console.log('type' + this.type);
+    console.log('from' + this.from);
+    console.log('to' + this.to);
+    console.log('date' + this.date);
+    console.log('deadline' + this.deadline);
+    console.log('message' + this.message);
+    console.log('category' + this.category);
+    console.log('cardCategory' + this.cardCategory);
   }
 
-  onUpdateTitel(event: Event) {
-    this.caller = (<HTMLInputElement>event.target).value;
-  }
 
-  onUpdateAufgabe(event: Event) {
-    this.caller = (<HTMLInputElement>event.target).value;
+  onUpdateTitle(event: Event) {
+    this.title = (<HTMLInputElement>event.target).value;
   }
-  onUpdateVon(event: Event) {
-    this.caller = (<HTMLInputElement>event.target).value;
+  onUpdateType(event: Event) {
+    this.type = (<HTMLInputElement>event.target).value;
   }
-  onUpdateFuer(event: Event) {
-    this.caller = (<HTMLInputElement>event.target).value;
+  onUpdateFrom(event: Event) {
+    this.from = (<HTMLInputElement>event.target).value;
   }
-  onUpdatePhone(event: Event) {
-    this.phoneNumber = (<HTMLInputElement>event.target).value;
+  onUpdateTo(event: Event) {
+    this.to = (<HTMLInputElement>event.target).value;
   }
-
-  onUpdateMessage(event: Event) {
-    this.message = (<HTMLInputElement>event.target).value;
-  }
-
   onUpdateDate(event: Event) {
     this.date = (<HTMLInputElement>event.target).value;
   }
+  onUpdateDeadline(event: Event) {
+    this.deadline = (<HTMLInputElement>event.target).value;
+  }
+  onUpdateMessage(event: Event) {
+    this.message = (<HTMLInputElement>event.target).value;
+  }
+  onUpdateCategory(event: Event) {
+    this.category = (<HTMLInputElement>event.target).value;
+  }
+  onUpdateCardCategory(event: Event) {
+     this.cardCategory = (<HTMLInputElement>event.target).value;
+  }
+
 
   changeRadioValue(event: MatRadioChange){
     //this.category = this.selection;

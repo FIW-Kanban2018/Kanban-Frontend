@@ -7,26 +7,26 @@
 
     <mat-radio-group class="radioinhalt" required (change)="changeRadioValue($event)">
       <br><br>
-      <mat-radio-button [value]="geschaeft" >Geschäftzimmer</mat-radio-button>
-      <mat-radio-button [value]="referatsueber">Referatsübergreifend</mat-radio-button>
-      <mat-radio-button [value]="langfristig">langfristige Termine</mat-radio-button>
+      <mat-radio-button value="geschaeft" >Geschäftzimmer</mat-radio-button>
+      <mat-radio-button value="referatsueber">Referatsübergreifend</mat-radio-button>
+      <mat-radio-button value="langfristig">langfristige Termine</mat-radio-button>
     </mat-radio-group>
     <br/>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Titel" (input)="onUpdateTitel($event)">
+      <input matInput type="text" placeholder="Titel" (input)="onUpdateTitle($event)">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Aufgabe" (input)="onUpdateAufgabe($event)">
+      <input matInput type="text" placeholder="Aufgabe" (input)="onUpdateType($event)">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Von" (input)="onUpdateVon($event)">
+      <input matInput type="text" placeholder="Von" (input)="onUpdateFrom($event)">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Fuer" (input)="onUpdateFuer($event)">
+      <input matInput type="text" placeholder="Fuer" (input)="onUpdateTo($event)">
     </mat-form-field>
 
     <mat-form-field>
@@ -36,7 +36,7 @@
 
     <mat-form-field>
       <mat-label>Deadline</mat-label>
-      <input matInput type="date" placeholder="" (input)="onUpdateDate($event)">
+      <input matInput type="date" placeholder="" (input)="onUpdateDeadline($event)">
     </mat-form-field>
 
     <mat-form-field>
