@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {MatSnackBar} from '@angular/material';
+import {MatRadioChange, MatSnackBar} from '@angular/material';
+import {DringendService} from './dringend.service';
+
 
 @Component({
   selector: 'app-dringend',
@@ -8,14 +10,47 @@ import {MatSnackBar} from '@angular/material';
 })
 export class DringendComponent implements OnInit {
 
-  constructor(public snackBarRef: MatSnackBar) { }
+  constructor(public snackBarRef: MatSnackBar,
+              public dringendService: DringendService) { }
+
+  task = '';
+  deadline = '';
+  category = '';
+  map = new Map();
 
   ngOnInit() {
   }
+  onSubmit() {
+    this.setData();
+    this.dringendService.sendData(this.map).subscribe(
+      res =>{
+        console.log(res);
+      },
+      err => {
+        console.log('Error occured.');
+      }
+    );
+    this.snackBarRef.open('Karte wurde angelegt', '', {duration: 2000});
+  }
+  setData() {
+    this.map.set('task', this.task)
+      .set('deadline', this.deadline)
+      .set('category', this.category);
+    console.log('task: ' + this.task);
+  }
+    onUpdateTask(event: Event) {
+    this.task = (<HTMLInputElement>event.target).value; }
+   onUpdateDeadline(event: Event) {
+    this.deadline = (<HTMLInputElement>event.target).value; }
+    onUpdateCategory(event: Event) {
+    this.category = (<HTMLInputElement>event.target).value;
+    }
 
-  // onSubmit(){
-  //   this.setData();
-  //   this.
-  // }
+  changeRadioValue(event: MatRadioChange) {
+    console.log('event.value: ' + event.value);
+    this.category = event.value;
+    console.log('category via event.value' + this.category);
+    console.log('event.source.name' + event.source.name);
+  }
+  }
 
-}

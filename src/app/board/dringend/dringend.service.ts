@@ -5,13 +5,13 @@ import {Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class DringendService{
-  constructor(private http: HttpClient){}
+export class DringendService {
+  constructor(private http: HttpClient) {}
 
-  urlServer= 'http://localhost:8080/dringend';
+  urlServer = 'http://localhost:8080/dringend';
 
   public sendData(data: Map<string, string>): Observable<any> {
-    const urlNew= this.urlServer+ '/new'
+    const urlNew = this.urlServer + '/new';
     console.log(
       urlNew
     );
@@ -19,6 +19,10 @@ export class DringendService{
     data.forEach((val: string, key: any) => {
       convMap[key] = val;
     });
-
+    return this.http.post(urlNew, convMap);
+  }
+  public getDringendCard(id: number) {
+    const urlId = this.urlServer + id;
+    return this.http.get(urlId).subscribe(res => { console.log(res); });
   }
 }

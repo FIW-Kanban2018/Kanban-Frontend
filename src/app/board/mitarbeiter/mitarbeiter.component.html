@@ -5,30 +5,30 @@
 
   <mat-card-content class="example-container">
 
-    <mat-radio-group class="radioinhalt">
+    <mat-radio-group class="radioinhalt" required (change)="changeRadioValue($event)">
       <br><br>
-      <mat-radio-button value="1">Geschäftzimmer</mat-radio-button>
-      <mat-radio-button value="2">Referatsübergreifend</mat-radio-button>
-      <mat-radio-button value="3">langfristige Termine</mat-radio-button>
+      <mat-radio-button [value]="geschaeft" >Geschäftzimmer</mat-radio-button><br><br>
+      <mat-radio-button [value]="referatsueber">Referatsübergreifend</mat-radio-button><br><br>
+      <mat-radio-button [value]="langfristig">langfristige Termine</mat-radio-button><br><br>
     </mat-radio-group>
 
     <br/> <br/>
 
     <mat-form-field>
       <mat-label>Name</mat-label>
-      <input matInput type="text" placeholder="Name">
+      <input matInput type="text" placeholder="Name"  (input)="onUpdateName($event)">
     </mat-form-field>
 
     <br/> <br/>
 
     <mat-form-field>
       <mat-label>Geburtstag</mat-label>
-      <input matInput type="date" placeholder="">
+      <input matInput type="date" placeholder="" (input)="onUpdateDOB($event)">
     </mat-form-field>
 
     <br/> <br/>
 
-    <mat-radio-group>
+    <mat-radio-group (change)="changeInternExtern($event)">
       <mat-radio-button value="intern">intern </mat-radio-button>
       <mat-radio-button value="extern">extern </mat-radio-button>
     </mat-radio-group>
@@ -37,21 +37,21 @@
 
     <mat-form-field>
       <mat-label>Einsatzdatum</mat-label>
-      <input matInput type="date" placeholder="">
+      <input matInput type="date" placeholder="" (input)="onUpdateDate($event)">
     </mat-form-field>
 
     <br/> <br/>
 
     <mat-form-field>
       <mat-label>Einsatzort</mat-label>
-      <input matInput type="text" placeholder="Einsatzort">
+      <input matInput type="text" placeholder="Einsatzort" (input)="onUpdatePlace($event)">
     </mat-form-field>
 
     <br/>
 
     <mat-form-field>
       <mat-label>Aufgabe</mat-label>
-      <input matInput type="text" placeholder="Aufgabe">
+      <input matInput type="text" placeholder="Aufgabe" (input)="onUpdateTask($event)">
     </mat-form-field>
 
     <br/>
@@ -71,8 +71,8 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-raised-button color="primary">Speichern</button>
-    <button mat-raised-button color="primary">Abbrechen</button>
+    <button mat-raised-button [mat-dialog-close]="snackBarRef " type="submit" (click)="onSubmit()" color="primary">Speichern</button>
+    <button mat-raised-button mat-dialog-close color="primary">Abbrechen</button>
   </mat-card-actions>
 
 </mat-card>
