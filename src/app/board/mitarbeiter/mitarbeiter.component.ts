@@ -11,6 +11,10 @@ import set = Reflect.set;
 export class MitarbeiterComponent implements OnInit {
 
   constructor(private mitarbeiterService: MitarbeiterService , public snackBarRef: MatSnackBar) { }
+
+  // Auswahl aus {telefonat, sonstiges, mitarbeiteranmelden, wanderkarte, veranstaltung, dringend}
+  cardCategory = '';
+
   name = '';
   dob = '';  // Geburtsdatum
   internextern = '';
@@ -44,6 +48,7 @@ export class MitarbeiterComponent implements OnInit {
       .set('Aufgabe', this.task)
       .set('Zuletzt geändert am:', this.lastmodified)
       .set('Erstellt am: ', this.created)
+      .set('Erstellt aml: ', this.cardCategory)
       .set('catergory', this.category);
 
 
@@ -55,6 +60,7 @@ export class MitarbeiterComponent implements OnInit {
         console.log('Aufgabe', this.task);
         console.log('Zuletzt geändert am: ', this.lastmodified);
         console.log('Erstellt am: ', this.created);
+        console.log('CardCategory:', this.cardCategory )
         console.log('category: ' + this.category);
       }
 
@@ -66,6 +72,9 @@ export class MitarbeiterComponent implements OnInit {
       onUpdateTask(event: Event){this.task = (<HTMLInputElement>event.target).value;}
       onUpdateLastmodified(event: Event){this.lastmodified = (<HTMLInputElement>event.target).value;}
       onUpdateCreated(event: Event){this.created = (<HTMLInputElement>event.target).value;}
+      onUpdateCard(event: Event){this.cardCategory = (<HTMLInputElement>event.target).value;}
+
+
       changeInternExtern(event: MatRadioChange){
       console.log('event.value: ' + event.value);
       this.internextern = event.value;
