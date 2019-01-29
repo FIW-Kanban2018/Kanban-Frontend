@@ -59,10 +59,10 @@ export class BoardComponent implements OnInit {
     console.log("test Get data");
     console.log("this: " , this);
     this.telefonatService.getAllTelefonatCards().subscribe((data) =>
-       {
-       console.log(data);
-       this.telefonatList = data;
-      });
+    {
+      console.log(data);
+      this.telefonatList = data;
+    });
   }
 
   newTelefonat(){
