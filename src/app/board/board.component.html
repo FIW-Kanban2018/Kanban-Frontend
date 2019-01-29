@@ -25,17 +25,23 @@
     <mat-card class="card-saeule">
       <mat-card-title style="font-size: 1.5vw;">Geschäftszimmer</mat-card-title>
       <mat-card-content>
-        
-          <div cdkDropList
-            #todoList="cdkDropList"
-            [cdkDropListData]="todo"
-            [cdkDropListConnectedTo]="[doneList]"
-            class="dad-list, leereSaeule"
-            (cdkDropListDropped)="drop($event)">
-            <div class="dad-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+        <!---->
+          <!--<div cdkDropList-->
+            <!--#todoList="cdkDropList"-->
+            <!--[cdkDropListData]="todo"-->
+            <!--[cdkDropListConnectedTo]="[doneList]"-->
+            <!--class="dad-list, leereSaeule"-->
+            <!--(cdkDropListDropped)="drop($event)">-->
+            <!--<div class="dad-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>-->
 
-
-        </div>
+            <div cdkDropList
+                 #doneList="cdkDropList"
+                 [cdkDropListData]="geschaeftszimmerList"
+                 [cdkDropListConnectedTo]="[refList, doneList1, termineList]"
+                 class="dad-list, leereSaeule"
+                 (cdkDropListDropped)="drop($event)">
+              <div class="dad-box" *ngFor="let item of geschaeftszimmerList" cdkDrag>{{item.id}} - {{item.cardCategory}}</div>
+            </div>
       </mat-card-content>
     </mat-card>
   </div>
@@ -45,23 +51,41 @@
       <mat-card-title style="font-size: 1.5vw;">Referatsübergreifend</mat-card-title>
       <mat-card-content>
 
-           <div cdkDropList
+        <!-- <div cdkDropList
             #doneList="cdkDropList"
             [cdkDropListData]="telefonatList"
             [cdkDropListConnectedTo]="[todoList]"
             class="dad-list, leereSaeule"
             (cdkDropListDropped)="drop($event)">
             <div class="dad-box" *ngFor="let item of telefonatList" cdkDrag>{{item.caller}} - {{item.date}}</div>
+          </div>-->
+
+        <div cdkDropList
+             #doneList="cdkDropList"
+             [cdkDropListData]="refList"
+             [cdkDropListConnectedTo]="[geschaeftszimmerList, doneList1, termineList]"
+             class="dad-list, leereSaeule"
+             (cdkDropListDropped)="drop($event)">
+          <div class="dad-box" *ngFor="let item of refList" cdkDrag>{{item.id}} - {{item.cardCategory}}</div>
         </div>
 
       </mat-card-content>
     </mat-card>
   </div>
+
   <div class="grid-saeule">
     <mat-card class="card-saeule">
       <mat-card-title style="font-size: 1.5vw;">langfristige Termine</mat-card-title>
-      <mat-card-content class="leereSaeule">
-        <div class="dad-box" *ngFor="let item of telefonatList" cdkDrag>{{item.caller}} - {{item.date}}</div>
+      <mat-card-content>
+        <!--<div class="dad-box" *ngFor="let item of telefonatList" cdkDrag>{{item.caller}} - {{item.date}}</div>-->
+        <div cdkDropList
+             #doneList="cdkDropList"
+             [cdkDropListData]="termineList"
+             [cdkDropListConnectedTo]="[geschaeftszimmerList, refList, doneList1]"
+             class="dad-list, leereSaeule"
+             (cdkDropListDropped)="drop($event)">
+          <div class="dad-box" *ngFor="let item of termineList" cdkDrag>{{item.id}} - {{item.cardCategory}}</div>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
@@ -69,7 +93,17 @@
   <div class="grid-saeule">
     <mat-card class="card-saeule">
       <mat-card-title style="font-size: 1.5vw;">Done</mat-card-title>
-      <mat-card-content class="leereSaeule"></mat-card-content>
+      <mat-card-content>
+
+      <div cdkDropList
+           #doneList="cdkDropList"
+           [cdkDropListData]="doneList1"
+           [cdkDropListConnectedTo]="[geschaeftszimmerList, refList, termineList]"
+           class="dad-list, leereSaeule"
+           (cdkDropListDropped)="drop($event)">
+        <div class="dad-box" *ngFor="let item of doneList1" cdkDrag>{{item.id}} - {{item.cardCategory}}</div>
+      </div>
+      </mat-card-content>
     </mat-card>
   </div>
 

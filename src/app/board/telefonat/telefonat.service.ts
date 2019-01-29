@@ -27,6 +27,8 @@ export class TelefonatService {
     return this.http.post(urlNew, convMap);
   }
 
+
+
   public getTelefonatCard(id: number): Observable<any> {
     const urlId = this.urlServer + id;
     return this.http.get(urlId);

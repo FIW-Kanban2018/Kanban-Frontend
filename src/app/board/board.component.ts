@@ -8,6 +8,8 @@ import { VeranstaltungComponent} from './veranstaltung/veranstaltung.component';
 import { WanderkarteComponent} from './wanderkarte/wanderkarte.component';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {TelefonatService} from './telefonat/telefonat.service';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 
 
@@ -18,9 +20,13 @@ import {TelefonatService} from './telefonat/telefonat.service';
 })
 export class BoardComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, private telefonatService: TelefonatService) { }
+  constructor(private dialog: MatDialog, private telefonatService: TelefonatService, private http: HttpClient ) { }
 
-  //Die 4 Säulen:
+  urlServerGeschaeftszimmer = 'http://localhost:8080/geschaeftszimmer';
+  urlServerReferat = 'http://localhost:8080/referat';
+  urlServerTermine = 'http://localhost:8080/termine';
+  urlServerDone = 'http://localhost:8080/done';
+
   todo = [
     'Get to work',
     'Pick up groceries',
@@ -36,7 +42,17 @@ export class BoardComponent implements OnInit {
     'Walk dog'
   ];
 
+
   telefonatList: any;
+
+
+  geschaeftszimmerList: any;
+  refList: any;
+  termineList: any;
+  doneList1: any;
+
+
+
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -53,6 +69,9 @@ export class BoardComponent implements OnInit {
   ngOnInit() {
     this.getTelefonatData();
     this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
+    this.getAllGeschaeftszimmerData();
+    this.getAllReferatData();
+    this.getDoneData();
   }
 
   getTelefonatData(){
@@ -65,6 +84,46 @@ export class BoardComponent implements OnInit {
       });
   }
 
+//Säulen Datenempfang
+
+  getAllGeschaeftszimmerData() {
+    console.log("test Geschaeftszimmer get Data");
+    console.log("this: ", this);
+    const urlGeschaeft = this.urlServerGeschaeftszimmer + "/all";
+    this.http.get(urlGeschaeft).subscribe((data) => {
+      console.log(data);
+      this.geschaeftszimmerList = data;
+    });
+  }
+
+  getAllReferatData() {
+    console.log("test Referat get Data");
+    console.log("this: ", this);
+    const urlReferat = this.urlServerReferat +"/all";
+    this.http.get(urlReferat).subscribe((data) => {
+      this.refList = data;
+    });
+  }
+
+  getTemineData() {
+    console.log("test Termine get Data");
+    console.log("this: ", this);
+    const urlTermine = this.urlServerTermine +"/all";
+    this.http.get(urlTermine).subscribe((data) => {
+      this.termineList = data;
+    });
+  }
+
+  getDoneData() {
+    console.log("test Done get Data");
+    console.log("this: ", this);
+    const urlDone = this.urlServerDone +"/all";
+    this.http.get(urlDone).subscribe((data) => {
+      this.doneList = data;
+    });
+  }
+
+  //Open Dialog
   newTelefonat(){
     //noch nicht fertig
     // const dialogConfig = new MatDialogConfig();
