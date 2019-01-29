@@ -18,20 +18,10 @@ export class WanderkarteService {
 
     const convMap = {};
     data.forEach((val: string, key: any) => {
-      convMap[key] = val;
-    });
 
-    //Angular uses Observables with httpClient, the request is only sent when
-    //we subscribe to this observable.
-    return this.http.post(urlNew, convMap);
-    // .subscribe(
-    //   res => {
-    //     console.log(res);
-    //   },
-    //   err => {
-    //     console.log("Error occured");
-    //   });
-  }
+      convMap[key] = val;});
+    return this.http.post(urlNew, convMap);}
+
 
   public getWanderCard(id: number)  {
     const urlId = this.urlServer + id;

@@ -22,6 +22,7 @@ export class TelefonatComponent implements OnInit {
   // Auswahl aus {telefonat, sonstiges, mitarbeiteranmelden, wanderkarte, veranstaltung, dringend}
   cardCategory = '';
   date = '';
+  cardCategory = '';
   map = new Map();
 
   ngOnInit(){}
@@ -38,7 +39,7 @@ export class TelefonatComponent implements OnInit {
         console.log("Error occured");
       });
 
-    this.snackBarRef.open('Karte wurde angelegt!' , 'Oki Doki', {duration: 1500});
+    this.snackBarRef.open('Karte wurde angelegt!' , '', {duration: 2000});
   }
 
   setData(){
@@ -46,12 +47,15 @@ export class TelefonatComponent implements OnInit {
       .set('message', this.message)
       .set('phonenumber', this.phoneNumber)
       .set('date', this.date)
+      .set('cardCategory', this.cardCategory)
       .set('category', this.category);
+
 
     console.log('caller: ' + this.caller);
     console.log('phone: ' + this.phoneNumber);
     console.log('message: ' + this.message);
     console.log('date: ' + this.date);
+    console.log('cardCategory: ' + this.cardCategory);
     console.log('category: ' + this.category);
   }
 
@@ -70,6 +74,7 @@ export class TelefonatComponent implements OnInit {
   onUpdateDate(event: Event) {
     this.date = (<HTMLInputElement>event.target).value;
   }
+
 
   changeRadioValue(event: MatRadioChange){
     //this.category = this.selection;

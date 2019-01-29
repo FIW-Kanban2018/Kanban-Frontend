@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {WanderkarteService} from './wanderkarte.service';
-import {MatRadioChange, MatSnackBar} from "@angular/material";
+
+import {MatRadioChange, MatSnackBar} from '@angular/material';
+
 
 @Component({
   selector: 'app-wanderkarte',
@@ -12,20 +14,21 @@ export class WanderkarteComponent implements OnInit {
   constructor(private wanderkarteService: WanderkarteService,
               public snackBarRef: MatSnackBar) { }
 
-title='';
-type='';
-from='';
-to='';
-date='';
-deadline='';
-message='';
-lastmodified='';
-created='';
+  title = '';
+  type = '';
+  from = '';
+  to = '';
+  date = '';
+  deadline = '';
+  message = '';
+  lastmodified = '';
+  created = '';
 // Auswahl aus {geschaeft, referatsueber, langfristig, done}
-category='';
+  category = '';
 // Auswahl aus {telefonat, sonstiges, mitarbeiteranmelden, wanderkarte, veranstaltung, dringend}
-cardCategory = 'wanderkarte';
-map = new Map();
+  cardCategory = 'wanderkarte';
+  map = new Map();
+
 
 
   ngOnInit(){}
@@ -53,8 +56,11 @@ map = new Map();
       .set('date', this.date)
       .set('deadline', this.deadline)
       .set('message', this.message)
-      .set('category', this.category)
+
+      .set('category', this.category);
+
       .set('cardCategory', this.cardCategory);
+
 
 
     console.log('title' + this.title);
@@ -65,16 +71,20 @@ map = new Map();
     console.log('deadline' + this.deadline);
     console.log('message' + this.message);
     console.log('category' + this.category);
+
     console.log('cardCategory' + this.cardCategory);
+
   }
 
 
   onUpdateTitle(event: Event) {
     this.title = (<HTMLInputElement>event.target).value;
+
   }
   onUpdateType(event: Event) {
     this.type = (<HTMLInputElement>event.target).value;
   }
+
   onUpdateFrom(event: Event) {
     this.from = (<HTMLInputElement>event.target).value;
   }
@@ -90,6 +100,12 @@ map = new Map();
   onUpdateMessage(event: Event) {
     this.message = (<HTMLInputElement>event.target).value;
   }
+
+
+
+  changeRadioValue(event: MatRadioChange){
+    console.log('event.value: ' + event.value);
+
   onUpdateCategory(event: Event) {
     this.category = (<HTMLInputElement>event.target).value;
   }
@@ -98,11 +114,7 @@ map = new Map();
   }
 
 
-  changeRadioValue(event: MatRadioChange){
-    //this.category = this.selection;
-    // this.category = mrChange.value;
-    console.log('event.value: ' + event.value);
-    //console.log('category via selection: ' + this.category);
+ 
     this.category = event.value;
     console.log('category via event.value' + this.category);
     console.log('event.source.name' + event.source.name);
