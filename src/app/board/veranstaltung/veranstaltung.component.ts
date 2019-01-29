@@ -44,7 +44,7 @@ export class VeranstaltungComponent implements OnInit {
         console.log("Error occured");
       });
 
-    this.snackBarRef.open('Karte wurde angelegt!' , 'Oki Doki', {duration: 1500});
+    this.snackBarRef.open('Karte wurde angelegt!' , '', {duration: 1500});
   }
 
   setData(){

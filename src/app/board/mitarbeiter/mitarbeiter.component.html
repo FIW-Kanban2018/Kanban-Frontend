@@ -7,15 +7,16 @@
 
     <mat-radio-group class="radioinhalt" required (change)="changeRadioValue($event)">
       <br><br>
-      <mat-radio-button value="geschaeft" >Geschäftzimmer</mat-radio-button><br><br>
-      <mat-radio-button value="referatsueber">Referatsübergreifend</mat-radio-button><br><br>
-      <mat-radio-button value="langfristig">langfristige Termine</mat-radio-button><br><br>
+      <mat-radio-button value="geschaeft" >Geschäftzimmer</mat-radio-button>
+      <mat-radio-button value="referatsueber">Referatsübergreifend</mat-radio-button>
+      <mat-radio-button value="langfristig">langfristige Termine</mat-radio-button>
     </mat-radio-group>
 
 
     <mat-form-field>
       <mat-label>Name</mat-label>
       <input matInput type="text" placeholder="Name"  (input)="onUpdateName($event)">
+      <mat-icon matSuffix>person</mat-icon>
     </mat-form-field>
 
 
@@ -23,6 +24,7 @@
     <mat-form-field>
       <mat-label>Geburtstag</mat-label>
       <input matInput type="date" placeholder="" (input)="onUpdateDOB($event)">
+      <mat-icon matSuffix>cake</mat-icon>
     </mat-form-field>
 
 
@@ -35,16 +37,19 @@
     <mat-form-field>
       <mat-label>Einsatzdatum</mat-label>
       <input matInput type="date" placeholder="" (input)="onUpdateDate($event)">
+      <mat-icon matSuffix>date_range</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Einsatzort</mat-label>
       <input matInput type="text" placeholder="Einsatzort" (input)="onUpdatePlace($event)">
+      <mat-icon matSuffix>location_on</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Aufgabe</mat-label>
       <input matInput type="text" placeholder="Aufgabe" (input)="onUpdateTask($event)">
+      <mat-icon matSuffix>assignment</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
@@ -54,6 +59,8 @@
     <mat-form-field>
       <mat-label>Folgeaktivität</mat-label>
       <input matInput type="text" placeholder="Folgeaktivität">
+      <mat-icon matSuffix>arrow_right_alt</mat-icon>
+      <mat-icon matSuffix>assignment</mat-icon>
     </mat-form-field>
 
 
