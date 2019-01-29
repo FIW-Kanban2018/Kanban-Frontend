@@ -5,50 +5,59 @@
 
   <mat-card-content class="example-container">
 
-
-    <mat-radio-group class="radioinhalt" required (change)="changeRadioValue($event)">
-      <br>
-      <mat-radio-button value="geschaeft" >Geschäftzimmer</mat-radio-button>
-      <mat-radio-button value="referatsueber">Referatsübergreifend</mat-radio-button>
-      <mat-radio-button value="langfristig">langfristige Termine</mat-radio-button>
+    <mat-radio-group class="radioinhalt" required (change) ="changeRadioValue($event)">
+      <br><br>
+      <mat-radio-button value="1">Geschäftzimmer</mat-radio-button>
+      <mat-radio-button value="2">Referatsübergreifend</mat-radio-button>
+      <mat-radio-button value="3">langfristige Termine</mat-radio-button>
     </mat-radio-group>
-
+    <br/>
 
     <mat-form-field>
+      <input matInput type="text" placeholder="Titel" (input)="onUpdateTitle($event)">
+      <mat-icon matSuffix>text_format</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Datum</mat-label>
+      <input matInput type="date" placeholder="" (input)="onUpdateDate($event)">
+      <mat-icon matSuffix>date_range</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="datetime-local" placeholder="Uhrzeit" (input)="onUpdateTime($event)">
+      <mat-icon matSuffix>access_time</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Veranstaltungsort" (input)="onUpdatePlace($event)">
+      <mat-icon matSuffix>location_on</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Auftraggeber" (input)="onUpdateClient($event)">
       <mat-icon matSuffix>person</mat-icon>
-      <input matInput type="text" placeholder="Name" (input)="onUpdateCaller($event)">
-    </mat-form-field>
-
-
-
-    <mat-form-field>
-      <mat-label>Geburtsdatum</mat-label>
-      <input matInput type="date" placeholder="" (input)="onUpdateDate($event)">
-    </mat-form-field>
-
-    <mat-radio-group required (change)="changeRadioValue($event)">
-      <mat-radio-button value="intern">intern</mat-radio-button>
-      <mat-radio-button value="extern">extern</mat-radio-button>
-    </mat-radio-group>
-
-
-    <mat-form-field>
-      <mat-label>Einsatzdatum</mat-label>
-      <input matInput type="date" placeholder="" (input)="onUpdateDate($event)">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Einsatzort" (input)="onUpdateMessage($event)">
+      <input matInput type="text" placeholder="Teilnehmer" (input)="onUpdateParticipants($event)">
+      <mat-icon matSuffix>people</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <textarea matInput placeholder="To Do:" (input)="onUpdateTodolist($event)"></textarea>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput placeholder="Aufgabe" (input)="onUpdateMessage($event)"></textarea>
+      <mat-label>Deadline</mat-label>
+      <input matInput type="date" placeholder="" (input)="onUpdateDeadline($event)">
+      <mat-icon matSuffix>update</mat-icon>
     </mat-form-field>
 
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-raised-button [mat-dialog-close]="snackBarRef " type="submit" (click)="onSubmit()" color="primary">Speichern</button>
+    <button mat-raised-button [mat-dialog-close]="snackBarRef" type="submit" (click)="onSubmit()" color="primary">Speichern</button>
     <button mat-raised-button mat-dialog-close color="primary">Abbrechen</button>
   </mat-card-actions>
 </mat-card>
