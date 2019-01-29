@@ -1,6 +1,6 @@
 <mat-card class="example-container">
   <mat-card-header>
-    <mat-card-title>Mitarbeiter anmelden</mat-card-title>
+    <mat-card-title class="text-Center">Mitarbeiter anmelden</mat-card-title>
   </mat-card-header>
 
   <mat-card-content class="example-container">
@@ -16,14 +16,19 @@
 
     <mat-form-field>
       <mat-label>Name</mat-label>
+
       <input matInput type="text" placeholder="Name"  (input)="onUpdateName($event)">
+
     </mat-form-field>
 
     <br/> <br/>
 
     <mat-form-field>
       <mat-label>Geburtstag</mat-label>
+
       <input matInput type="date" placeholder="" (input)="onUpdateDOB($event)">
+
+
     </mat-form-field>
 
     <br/> <br/>
@@ -37,26 +42,32 @@
 
     <mat-form-field>
       <mat-label>Einsatzdatum</mat-label>
+
       <input matInput type="date" placeholder="" (input)="onUpdateDate($event)">
+
     </mat-form-field>
 
     <br/> <br/>
 
     <mat-form-field>
       <mat-label>Einsatzort</mat-label>
+
       <input matInput type="text" placeholder="Einsatzort" (input)="onUpdatePlace($event)">
+
     </mat-form-field>
 
     <br/>
 
     <mat-form-field>
       <mat-label>Aufgabe</mat-label>
+
       <input matInput type="text" placeholder="Aufgabe" (input)="onUpdateTask($event)">
+
     </mat-form-field>
 
     <br/>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <textarea matInput placeholder="Notiz"></textarea>
     </mat-form-field>
 
@@ -65,6 +76,8 @@
     <mat-form-field>
       <mat-label>Folgeaktivität</mat-label>
       <input matInput type="text" placeholder="Folgeaktivität">
+      <mat-icon matSuffix>arrow_right_alt</mat-icon>
+      <mat-icon matSuffix>assignment</mat-icon>
     </mat-form-field>
 
 

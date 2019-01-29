@@ -24,20 +24,17 @@
   <div class="grid-saeule">
     <mat-card class="card-saeule">
       <mat-card-title>Geschäftszimmer</mat-card-title>
-      <mat-card-content class="leereSaeule">
+      <mat-card-content>
         
-        <div class="">
-
-          <div
-            cdkDropList
+          <div cdkDropList
             #todoList="cdkDropList"
             [cdkDropListData]="todo"
             [cdkDropListConnectedTo]="[doneList]"
-            class="dad-list"
+            class="dad-list, leereSaeule"
             (cdkDropListDropped)="drop($event)">
             <div class="dad-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
 
-        </div>
+
         </div>
       </mat-card-content>
     </mat-card>
@@ -46,16 +43,15 @@
   <div class="grid-saeule">
     <mat-card class="card-saeule">
       <mat-card-title>Referatsübergreifend</mat-card-title>
-      <mat-card-content class="leereSaeule">
-        <div class="dad-container">
+      <mat-card-content>
+
            <div cdkDropList
             #doneList="cdkDropList"
-            [cdkDropListData]="done"
+            [cdkDropListData]="telefonatList"
             [cdkDropListConnectedTo]="[todoList]"
-            class="dad-list"
+            class="dad-list, leereSaeule"
             (cdkDropListDropped)="drop($event)">
-            <div class="dad-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
-          </div>
+            <div class="dad-box" *ngFor="let item of telefonatList" cdkDrag>{{item.caller}} - {{item.date}}</div>
         </div>
 
       </mat-card-content>
@@ -64,9 +60,12 @@
   <div class="grid-saeule">
     <mat-card class="card-saeule">
       <mat-card-title>langfristige Termine</mat-card-title>
-      <mat-card-content class="leereSaeule"></mat-card-content>
+      <mat-card-content class="leereSaeule">
+        <div class="dad-box" *ngFor="let item of telefonatList" cdkDrag>{{item.caller}} - {{item.date}}</div>
+      </mat-card-content>
     </mat-card>
   </div>
+
   <div class="grid-saeule">
     <mat-card class="card-saeule">
       <mat-card-title>Done</mat-card-title>

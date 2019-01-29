@@ -18,6 +18,11 @@ export class DringendComponent implements OnInit {
   category = '';
   map = new Map();
 
+  // Auswahl aus {geschaeft, referatsueber, langfristig, done}
+  category = '';
+  // Auswahl aus {telefonat, sonstiges, mitarbeiteranmelden, wanderkarte, veranstaltung, dringend}
+  cardCategory = '';
+
   ngOnInit() {
   }
   onSubmit() {

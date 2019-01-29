@@ -18,8 +18,10 @@ export class WanderkarteService {
 
     const convMap = {};
     data.forEach((val: string, key: any) => {
+
       convMap[key] = val;});
     return this.http.post(urlNew, convMap);}
+
 
   public getWanderCard(id: number)  {
     const urlId = this.urlServer + id;

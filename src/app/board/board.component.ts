@@ -7,6 +7,7 @@ import { SonstigesComponent} from './sonstiges/sonstiges.component';
 import { VeranstaltungComponent} from './veranstaltung/veranstaltung.component';
 import { WanderkarteComponent} from './wanderkarte/wanderkarte.component';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {TelefonatService} from './telefonat/telefonat.service';
 
 
 
@@ -16,6 +17,8 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
+
+  constructor(private dialog: MatDialog, private telefonatService: TelefonatService) { }
 
   //Die 4 Säulen:
   todo = [
@@ -33,25 +36,34 @@ export class BoardComponent implements OnInit {
     'Walk dog'
   ];
 
+  telefonatList: any;
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
+    }
+    else {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-
     }
   }
 
-  constructor(
-
-    private dialog: MatDialog) { }
-
   ngOnInit() {
+    this.getTelefonatData();
+    this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
   }
 
+  getTelefonatData(){
+    console.log("test Get data");
+    console.log("this: " , this);
+    this.telefonatService.getAllTelefonatCards().subscribe((data) =>
+       {
+       console.log(data);
+       this.telefonatList = data;
+      });
+  }
 
   newTelefonat(){
     //noch nicht fertig

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {WanderkarteService} from './wanderkarte.service';
+
 import {MatRadioChange, MatSnackBar} from '@angular/material';
+
 
 @Component({
   selector: 'app-wanderkarte',
@@ -28,6 +30,7 @@ export class WanderkarteComponent implements OnInit {
   map = new Map();
 
 
+
   ngOnInit(){}
 
   onSubmit() {
@@ -53,7 +56,11 @@ export class WanderkarteComponent implements OnInit {
       .set('date', this.date)
       .set('deadline', this.deadline)
       .set('message', this.message)
+
       .set('category', this.category);
+
+      .set('cardCategory', this.cardCategory);
+
 
 
     console.log('title' + this.title);
@@ -64,15 +71,20 @@ export class WanderkarteComponent implements OnInit {
     console.log('deadline' + this.deadline);
     console.log('message' + this.message);
     console.log('category' + this.category);
+
+    console.log('cardCategory' + this.cardCategory);
+
   }
 
 
   onUpdateTitle(event: Event) {
     this.title = (<HTMLInputElement>event.target).value;
+
   }
   onUpdateType(event: Event) {
     this.type = (<HTMLInputElement>event.target).value;
   }
+
   onUpdateFrom(event: Event) {
     this.from = (<HTMLInputElement>event.target).value;
   }
@@ -90,8 +102,19 @@ export class WanderkarteComponent implements OnInit {
   }
 
 
+
   changeRadioValue(event: MatRadioChange){
     console.log('event.value: ' + event.value);
+
+  onUpdateCategory(event: Event) {
+    this.category = (<HTMLInputElement>event.target).value;
+  }
+  onUpdateCardCategory(event: Event) {
+     this.cardCategory = (<HTMLInputElement>event.target).value;
+  }
+
+
+ 
     this.category = event.value;
     console.log('category via event.value' + this.category);
     console.log('event.source.name' + event.source.name);

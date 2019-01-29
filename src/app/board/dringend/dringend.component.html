@@ -1,11 +1,13 @@
 <mat-card class="example-container">
   <mat-card-header>
-    <mat-card-title>Dringend</mat-card-title>
+    <mat-card-title class="text-Center">Dringend</mat-card-title>
   </mat-card-header>
 
   <mat-card-content class="example-container">
+
     
    <mat-radio-group class="radioinhalt" required (change)="changeRadioValue($event)">
+
       <br><br>
      <mat-radio-button value="geschaeft" >Geschäftzimmer</mat-radio-button><br><br>
      <mat-radio-button value="referatsueber">Referatsübergreifend</mat-radio-button><br><br>
@@ -13,18 +15,19 @@
     </mat-radio-group>
     <br/>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-label>Aufgabe</mat-label>
       <textarea matInput class="textarea" placeholder="" (input)="onUpdateTask($event)"></textarea>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Termin</mat-label>
+
       <mat-icon matSuffix>update</mat-icon>
       <input matInput type="date" placeholder="" (input)="onUpdateDeadline($event)">
 
     </mat-form-field>
-    
+
   </mat-card-content>
 
   <mat-card-actions>
