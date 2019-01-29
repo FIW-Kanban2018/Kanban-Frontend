@@ -62,7 +62,7 @@
   /*min-width: 12vh;*/
   width: 13vw;
   margin: auto;
-  font-size: 22px;
+  font-size: 1.4vw;
 
 }
 
@@ -112,7 +112,7 @@
   /*min-width: 12vh;*/
   width: 13vw;
   margin: auto;
-  font-size: 22px;
+  font-size: 1.4vw;
 }
 
 .button-card2:hover {
@@ -128,7 +128,7 @@
   /*min-width: 12vh;*/
   width: 13vw;
   margin: auto;
-  font-size: 22px;
+  font-size: 1.4vw;
 }
 
 .button-card3:hover {
@@ -145,7 +145,7 @@
   /*min-width: 12vh;*/
   width: 13vw;
   margin: auto;
-  font-size: 22px;
+  font-size: 1.4vw;
 }
 
 .button-card4:hover {
@@ -161,7 +161,7 @@
   /*min-width: 12vh;*/
   width: 13vw;
   margin: auto;
-  font-size: 22px;
+  font-size: 1.4vw;
 }
 
 .button-card5:hover {
@@ -177,7 +177,8 @@
   /*min-width: 12vh;*/
   width: 13vw;
   margin: auto;
-  font-size: 22px;
+  font-size: 1.4vw;
+
 }
 
 .button-card6:hover {

@@ -1,13 +1,13 @@
 <mat-card class="example-container">
   <mat-card-header>
-    <mat-card-title>Veranstaltung</mat-card-title>
+    <mat-card-title class="text-Center">Veranstaltung</mat-card-title>
   </mat-card-header>
 
   <mat-card-content class="example-container">
 
 
     <mat-radio-group class="radioinhalt" required (change)="changeRadioValue($event)">
-      <br><br>
+      <br>
       <mat-radio-button value="geschaeft" >Geschäftzimmer</mat-radio-button>
       <mat-radio-button value="referatsueber">Referatsübergreifend</mat-radio-button>
       <mat-radio-button value="langfristig">langfristige Termine</mat-radio-button>
@@ -30,7 +30,6 @@
       <mat-radio-button value="intern">intern</mat-radio-button>
       <mat-radio-button value="extern">extern</mat-radio-button>
     </mat-radio-group>
-    <br/>
 
 
     <mat-form-field>

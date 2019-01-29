@@ -12,7 +12,7 @@
     <button mat-raised-button class="button-card" (click)="newTelefonat()">Telefonat</button>
 
     <button mat-raised-button class="button-card3" (click)="newVeranstaltung()">Veranstaltung</button>
-    <button mat-raised-button class="button-card4" (click)="newMitarbeiter()">Mitarbeiter anmelden</button>
+    <button mat-raised-button class="button-card4" (click)="newMitarbeiter()">Anmeldung</button>
 
     <button mat-raised-button class="button-card5" (click)="newWanderkarte()">Wanderkarte</button>
     <button mat-raised-button class="button-card6" (click)="newSonstiges()">Sonstiges</button>
@@ -23,7 +23,7 @@
 
   <div class="grid-saeule">
     <mat-card class="card-saeule">
-      <mat-card-title>Geschäftszimmer</mat-card-title>
+      <mat-card-title style="font-size: 1.5vw;">Geschäftszimmer</mat-card-title>
       <mat-card-content>
         
           <div cdkDropList
@@ -42,7 +42,7 @@
 
   <div class="grid-saeule">
     <mat-card class="card-saeule">
-      <mat-card-title>Referatsübergreifend</mat-card-title>
+      <mat-card-title style="font-size: 1.5vw;">Referatsübergreifend</mat-card-title>
       <mat-card-content>
 
            <div cdkDropList
@@ -59,7 +59,7 @@
   </div>
   <div class="grid-saeule">
     <mat-card class="card-saeule">
-      <mat-card-title>langfristige Termine</mat-card-title>
+      <mat-card-title style="font-size: 1.5vw;">langfristige Termine</mat-card-title>
       <mat-card-content class="leereSaeule">
         <div class="dad-box" *ngFor="let item of telefonatList" cdkDrag>{{item.caller}} - {{item.date}}</div>
       </mat-card-content>
@@ -68,7 +68,7 @@
 
   <div class="grid-saeule">
     <mat-card class="card-saeule">
-      <mat-card-title>Done</mat-card-title>
+      <mat-card-title style="font-size: 1.5vw;">Done</mat-card-title>
       <mat-card-content class="leereSaeule"></mat-card-content>
     </mat-card>
   </div>
