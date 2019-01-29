@@ -36,7 +36,7 @@ export class MitarbeiterComponent implements OnInit {
       },
       err => {
         console.log('Error occured.'); });
-    this.snackBarRef.open('Karte wurde angelegt', '', {duration: 2000});
+    this.snackBarRef.open('Karte wurde angelegt!', '', {duration: 2000});
       }
       setData() {
     this.map.set('name', this.name)

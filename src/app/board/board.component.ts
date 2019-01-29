@@ -50,7 +50,7 @@ export class BoardComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+ /* ngOnInit() {
     this.getTelefonatData();
     this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
   }
@@ -64,7 +64,7 @@ export class BoardComponent implements OnInit {
       this.telefonatList = data;
     });
   }
-
+*/
   newTelefonat(){
     //noch nicht fertig
     // const dialogConfig = new MatDialogConfig();
