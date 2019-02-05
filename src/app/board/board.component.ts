@@ -50,8 +50,8 @@ export class BoardComponent implements OnInit {
     }
   }
 
- /* ngOnInit() {
-    this.getTelefonatData();
+ ngOnInit() {}
+   /* this.getTelefonatData();
     this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
   }
 
