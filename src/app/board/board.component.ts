@@ -66,7 +66,7 @@ export class BoardComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+ /* ngOnInit() {
     this.getTelefonatData();
     this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
     this.getAllGeschaeftszimmerData();
@@ -78,11 +78,12 @@ export class BoardComponent implements OnInit {
     console.log("test Get data");
     console.log("this: " , this);
     this.telefonatService.getAllTelefonatCards().subscribe((data) =>
-       {
-       console.log(data);
-       this.telefonatList = data;
-      });
+    {
+      console.log(data);
+      this.telefonatList = data;
+    });
   }
+
 
 //Säulen Datenempfang
 

@@ -1,59 +1,62 @@
 <mat-card class="example-container">
   <mat-card-header>
-    <mat-card-title class="text-Center">Mitarbeiteranmeldung</mat-card-title>
+    <mat-card-title>Mitarbeiter anmelden</mat-card-title>
   </mat-card-header>
 
   <mat-card-content class="example-container">
 
-    <mat-radio-group class="radioinhalt">
+
+    <mat-radio-group class="radioinhalt" required (change)="changeRadioValue($event)">
       <br>
-      <mat-radio-button value="1">Geschäftzimmer</mat-radio-button>
-      <mat-radio-button value="2">Referatsübergreifend</mat-radio-button>
-      <mat-radio-button value="3">langfristige Termine</mat-radio-button>
+      <mat-radio-button value="geschaeft" >Geschäftzimmer</mat-radio-button>
+      <mat-radio-button value="referatsueber">Referatsübergreifend</mat-radio-button>
+      <mat-radio-button value="langfristig">langfristige Termine</mat-radio-button>
       <br>
     </mat-radio-group>
 
+
     <mat-form-field>
       <mat-label>Name</mat-label>
-      <input matInput type="text" placeholder="Name">
+      <input matInput type="text" placeholder="Name"  (input)="onUpdateName($event)">
       <mat-icon matSuffix>person</mat-icon>
     </mat-form-field>
 
+
+
     <mat-form-field>
       <mat-label>Geburtstag</mat-label>
-      <input matInput type="date" placeholder="">
+      <input matInput type="date" placeholder="" (input)="onUpdateDOB($event)">
       <mat-icon matSuffix>cake</mat-icon>
     </mat-form-field>
 
-    <mat-radio-group>
+
+    <mat-radio-group (change)="changeInternExtern($event)">
       <mat-radio-button value="intern">intern </mat-radio-button>
       <mat-radio-button value="extern">extern </mat-radio-button>
     </mat-radio-group>
 
+
     <mat-form-field>
       <mat-label>Einsatzdatum</mat-label>
-      <input matInput type="date" placeholder="">
+      <input matInput type="date" placeholder="" (input)="onUpdateDate($event)">
       <mat-icon matSuffix>date_range</mat-icon>
     </mat-form-field>
 
-
     <mat-form-field>
       <mat-label>Einsatzort</mat-label>
-      <input matInput type="text" placeholder="Einsatzort">
+      <input matInput type="text" placeholder="Einsatzort" (input)="onUpdatePlace($event)">
       <mat-icon matSuffix>location_on</mat-icon>
     </mat-form-field>
 
-
     <mat-form-field>
       <mat-label>Aufgabe</mat-label>
-      <input matInput type="text" placeholder="Aufgabe">
+      <input matInput type="text" placeholder="Aufgabe" (input)="onUpdateTask($event)">
       <mat-icon matSuffix>assignment</mat-icon>
     </mat-form-field>
 
-    <mat-form-field appearance="outline">
+    <mat-form-field>
       <textarea matInput placeholder="Notiz"></textarea>
     </mat-form-field>
-
 
     <mat-form-field>
       <mat-label>Folgeaktivität</mat-label>
@@ -66,8 +69,8 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-raised-button color="primary">Speichern</button>
-    <button mat-raised-button color="primary">Abbrechen</button>
+    <button mat-raised-button [mat-dialog-close]="snackBarRef " type="submit" (click)="onSubmit()" color="primary">Speichern</button>
+    <button mat-raised-button mat-dialog-close color="primary">Abbrechen</button>
   </mat-card-actions>
 
 </mat-card>

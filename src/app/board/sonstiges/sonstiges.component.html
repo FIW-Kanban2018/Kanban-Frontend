@@ -1,30 +1,30 @@
 <mat-card class="example-container">
   <mat-card-header>
-    <mat-card-title class="text-Center"> Sonstiges </mat-card-title>
+    <mat-card-title> Sonstiges </mat-card-title>
   </mat-card-header>
 
   <mat-card-content class="example-container">
 
-    <mat-radio-group class="radioinhalt">
-      <br>
-      <mat-radio-button value="1">Geschäftzimmer</mat-radio-button>
-      <mat-radio-button value="2">Referatsübergreifend</mat-radio-button>
-      <mat-radio-button value="3">langfristige Termine</mat-radio-button>
+    <mat-radio-group class="radioinhalt" required (change)="changeRadioValue($event)">
+      <br><br>
+      <mat-radio-button value="geschaeft">Geschäftzimmer</mat-radio-button>
+      <mat-radio-button value="referatsueber">Referatsübergreifend</mat-radio-button>
+      <mat-radio-button value="langfristig">langfristige Termine</mat-radio-button>
     </mat-radio-group>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Aufgabe">
+      <input matInput type="text" placeholder="Aufgabe" (input)="onUpdateTask($event)">
       <mat-icon matSuffix>assignment</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Date</mat-label>
-      <input matInput type="date" placeholder="">
+      <input matInput type="date" placeholder="" (input)="onUpdateDeadline($event)">
       <mat-icon matSuffix>date_range</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Folgeaktivität">
+      <input matInput type="text" placeholder="Folgeaktivität" (input)="onUpdatePosttask($event)">
       <mat-icon matSuffix>arrow_right_alt</mat-icon>
       <mat-icon matSuffix>assignment</mat-icon>
     </mat-form-field>
@@ -32,7 +32,7 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-raised-button color="primary">Speichern</button>
-    <button mat-raised-button color="primary">Abbrechen</button>
+    <button mat-raised-button [mat-dialog-close]="snackBarRef " type="submit" (click)="onSubmit()" color="primary">Speichern</button>
+    <button mat-raised-button mat-dialog-close color="primary">Abbrechen</button>
   </mat-card-actions>
 </mat-card>

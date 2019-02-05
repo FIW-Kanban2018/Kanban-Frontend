@@ -14,28 +14,34 @@
 
     <mat-form-field>
       <input matInput type="text" placeholder="Titel" (input)="onUpdateTitle($event)">
+      <mat-icon matSuffix>text_format</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
       <input matInput type="text" placeholder="Aufgabe" (input)="onUpdateType($event)">
+      <mat-icon matSuffix>assignment</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
       <input matInput type="text" placeholder="Von" (input)="onUpdateFrom($event)">
+      <mat-icon matSuffix>person</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Für" (input)="onUpdateTo($event)">
+      <input matInput type="text" placeholder="Für" (input)="onUpdateTo($event)"     
+      <mat-icon matSuffix>person_outline</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Übergabedatum</mat-label>
       <input matInput type="date" placeholder="" (input)="onUpdateDate($event)">
+      <mat-icon matSuffix>date_range</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Deadline</mat-label>
       <input matInput type="date" placeholder="" (input)="onUpdateDeadline($event)">
+      <mat-icon matSuffix>update</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
