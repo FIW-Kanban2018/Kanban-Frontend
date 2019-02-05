@@ -22,10 +22,10 @@ export class BoardComponent implements OnInit {
 
   constructor(private dialog: MatDialog, private telefonatService: TelefonatService, private http: HttpClient ) { }
 
-  urlServerGeschaeftszimmer = 'http://localhost:8080/geschaeftszimmer';
-  urlServerReferat = 'http://localhost:8080/referat';
-  urlServerTermine = 'http://localhost:8080/termine';
-  urlServerDone = 'http://localhost:8080/done';
+  urlServerGeschaeftszimmer = 'http://localhost:8080/telefonat/geschaeftszimmer';
+  urlServerReferat = 'http://localhost:8080/telefonat/referat';
+  urlServerTermine = 'http://localhost:8080/telefonat/termine';
+  urlServerDone = 'http://localhost:8080/telefonat/done';
 
   todo = [
     'Get to work',
@@ -119,7 +119,7 @@ export class BoardComponent implements OnInit {
     console.log("this: ", this);
     const urlDone = this.urlServerDone +"/all";
     this.http.get(urlDone).subscribe((data) => {
-      this.doneList = data;
+      this.doneList1 = data;
     });
   }
 
