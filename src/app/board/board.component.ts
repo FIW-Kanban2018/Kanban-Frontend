@@ -8,6 +8,9 @@ import { VeranstaltungComponent} from './veranstaltung/veranstaltung.component';
 import { WanderkarteComponent} from './wanderkarte/wanderkarte.component';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {TelefonatService} from './telefonat/telefonat.service';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+
 
 
 
@@ -18,31 +21,39 @@ import {TelefonatService} from './telefonat/telefonat.service';
 })
 export class BoardComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, private telefonatService: TelefonatService) { }
+  constructor(private dialog: MatDialog, private telefonatService: TelefonatService, private http: HttpClient) { }
 
-  //Die 4 Säulen:
-  todo = [
-    'Get to work',
-    'Pick up groceries',
-    'Go home',
-    'Fall asleep'
-  ];
+  urlServerGeschaeftszimmer = 'http://localhost:8080/telefonat/geschaeftszimmer';
+  urlServerReferat = 'http://localhost:8080/telefonat/referat';
+  urlServerTermine = 'http://localhost:8080/telefonat/termine';
+  urlServerDone = 'http://localhost:8080/telefonat/done';
 
-  done = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
-  ];
+
+  // todo = [
+  //   'Get to work',
+  //   'Pick up groceries',
+  //   'Go home',
+  //   'Fall asleep'
+  // ];
+  //
+  // done = [
+  //   'Get up',
+  //   'Brush teeth',
+  //   'Take a shower',
+  //   'Check e-mail',
+  //   'Walk dog'
+  // ];
 
   telefonatList: any;
+  geschaeftzimmerList: any;
+  refList: any;
+  termineList: any;
+  doneList1: any;
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    }
-    else {
+    } else {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
@@ -50,7 +61,59 @@ export class BoardComponent implements OnInit {
     }
   }
 
- ngOnInit() {}
+ ngOnInit() {
+    this.getTelefonatData();
+    this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
+    this.getAllGeschaeftszimmerData();
+    this.getAllReferatData();
+    this.getDoneData();
+ }
+
+  getTelefonatData(){
+    console.log('test Get data');
+    console.log('this: ' , this);
+    this.telefonatService.getAllTelefonatCards().subscribe((data) =>
+    {
+      console.log(data);
+      this.telefonatList = data;
+    });
+  }
+  getAllGeschaeftszimmerData() {
+    console.log('test Geschaeftszimmer get Data');
+    console.log('this: ', this);
+    const urlGeschaeft = this.urlServerGeschaeftszimmer + '/all';
+    this.http.get(urlGeschaeft).subscribe((data) => {
+      console.log(data);
+      this.geschaeftzimmerList = data;
+    });
+  }
+
+  getAllReferatData() {
+    console.log('test Referat get Data');
+    console.log('this: ', this);
+    const urlReferat = this.urlServerReferat +'/all';
+    this.http.get(urlReferat).subscribe((data) => {
+      this.refList = data;
+    });
+  }
+
+  getTemineData() {
+    console.log('test Termine get Data');
+    console.log('this: ', this);
+    const urlTermine = this.urlServerTermine +'/all';
+    this.http.get(urlTermine).subscribe((data) => {
+      this.termineList = data;
+    });
+  }
+
+  getDoneData() {
+    console.log('test Done get Data');
+    console.log('this: ', this);
+    const urlDone = this.urlServerDone +'/all';
+    this.http.get(urlDone).subscribe((data) => {
+      this.doneList1= data;
+    });
+  }
    /* this.getTelefonatData();
     this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
   }
