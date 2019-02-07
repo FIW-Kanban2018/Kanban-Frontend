@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 })
 export class DringendService {
   constructor(private http: HttpClient) {}
-  public newCardEvent: EventEmitter<any>= new EventEmitter();
+  public newCardEvent: EventEmitter<any> = new EventEmitter();
 
   urlServer = 'http://localhost:8080/dringend';
 

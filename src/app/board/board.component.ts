@@ -28,23 +28,6 @@ export class BoardComponent implements OnInit {
   urlServerTermine = 'http://localhost:8080/category/langfristig';
   urlServerDone = 'http://localhost:8080/category/done';
 
-
-  // todo = [
-  //   'Get to work',
-  //   'Pick up groceries',
-  //   'Go home',
-  //   'Fall asleep'
-  // ];
-  //
-  // done = [
-  //   'Get up',
-  //   'Brush teeth',
-  //   'Take a shower',
-  //   'Check e-mail',
-  //   'Walk dog'
-  // ];
-
-  telefonatList: any;
   geschaeftszimmerList: any;
   refList: any;
   termineList: any;
@@ -53,21 +36,15 @@ export class BoardComponent implements OnInit {
  ngOnInit() {
     // this.getTelefonatData();
     // this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
+    this.geschaeftszimmerList='';
+    this.refList='';
+    this.termineList='';
+    this.doneList1='';
     this.getAllGeschaeftszimmerData();
     this.getAllReferatData();
     this.getDoneData();
     this.getTemineData();
  }
-
-  // getTelefonatData(){
-  //   console.log('test Get data');
-  //   console.log('this: ' , this);
-  //   this.telefonatService.getAllTelefonatCards().subscribe((data) =>
-  //   {
-  //     console.log(data);
-  //     this.telefonatList = data;
-  //   });
-  // }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
