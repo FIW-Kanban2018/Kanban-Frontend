@@ -84,9 +84,7 @@ export class BoardComponent implements OnInit {
     console.log('test Geschaeftszimmer get Data');
     console.log('this: ', this);
     this.http.get(this.urlServerGeschaeftszimmer).subscribe((data) => {
-      console.log("geschaeft-data: " + data);
       this.geschaeftszimmerList = data;
-      console.log("geschaeftszimmerList: " + data);
     });
   }
 
