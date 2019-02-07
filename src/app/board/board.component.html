@@ -31,7 +31,7 @@
              [cdkDropListConnectedTo]="[termine, referat, done]"
              class="dad-list, leereSaeule"
              (cdkDropListDropped)="drop($event)">
-          <div class="dad-box" *ngFor="let item of geschaeftszimmerList" cdkDrag>{{item.id}} - {{item.cardCategory}}</div>
+          <div class="dad-box" *ngFor="let item of geschaeftszimmerList" cdkDrag>{{item.id}} - {{item.title}}</div>
           </div>
 
       </mat-card-content>
@@ -57,7 +57,7 @@
              [cdkDropListConnectedTo]="[geschaeft, termine, done]"
              class="dad-list, leereSaeule"
              (cdkDropListDropped)="drop($event)">
-          <div class="dad-box" *ngFor="let item of refList" cdkDrag>{{item.id}} - {{item.cardCategory}}</div>
+          <div class="dad-box" *ngFor="let item of refList" cdkDrag>{{item.id}} - {{item.title}}</div>
         </div>
       </mat-card-content>
     </mat-card>
@@ -73,7 +73,7 @@
              [cdkDropListConnectedTo]="[geschaeft, referat, done]"
              class="dad-list, leereSaeule"
              (cdkDropListDropped)="drop($event)">
-          <div class="dad-box" *ngFor="let item of termineList" cdkDrag>{{item.id}} - {{item.cardCategory}}</div>
+          <div class="dad-box" *ngFor="let item of termineList" cdkDrag>{{item.id}} - {{item.title}}</div>
         </div>
       </mat-card-content>
     </mat-card>
@@ -90,7 +90,7 @@
              class="dad-list, leereSaeule"
              (cdkDropListDropped)="drop($event)">
 
-          <div class="dad-box" *ngFor="let item of doneList1" cdkDrag>{{item.id}} - {{item.cardCategory}}</div>
+          <div class="dad-box" *ngFor="let item of doneList1" cdkDrag>{{item.id}} - {{item.title}}</div>
         </div>
       </mat-card-content>
       </mat-card>
