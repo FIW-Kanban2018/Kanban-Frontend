@@ -94,7 +94,6 @@ export class BoardComponent implements OnInit {
     console.log('test Referat get Data');
     console.log('this: ', this);
     this.http.get(this.urlServerReferat).subscribe((data) => {
-
       this.refList = data;
     });
   }
