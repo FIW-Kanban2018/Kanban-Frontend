@@ -14,7 +14,7 @@ export class MitarbeiterComponent implements OnInit {
   // Auswahl aus {telefonat, sonstiges, mitarbeiteranmelden, wanderkarte, veranstaltung, dringend}
   cardCategory = '';
 
-  name = '';
+  title = '';
   dob = '';  // Geburtsdatum
   internextern = '';
   date = ''; // Einsatzdatum
@@ -39,7 +39,7 @@ export class MitarbeiterComponent implements OnInit {
     this.snackBarRef.open('Karte wurde angelegt!', '', {duration: 2000});
       }
       setData() {
-    this.map.set('name', this.name)
+    this.map.set('title', this.title)
       .set('dob', this.dob)
       .set('internextern', this.internextern)
       .set('date', this.date)
@@ -49,7 +49,7 @@ export class MitarbeiterComponent implements OnInit {
       .set('catergory', this.category);
 
 
-        console.log('name', this.name);
+        console.log('title', this.title);
         console.log('dob', this.dob);
         console.log('internextern', this.internextern);
         console.log('date', this.date);
@@ -58,8 +58,8 @@ export class MitarbeiterComponent implements OnInit {
         console.log('category' + this.category);
       }
 
-      onUpdateName(event: Event) {this.name = (<HTMLInputElement>event.target).value;}
-      onUpdateDOB(event: Event){this.dob = (<HTMLInputElement>event.target).value;}
+      onUpdateTitle(event: Event) {this.title = (<HTMLInputElement>event.target).value;}
+      onUpdateDOB(event: Event) {this.dob = (<HTMLInputElement>event.target).value;}
       // onUpdateInternExtern(event: Event){this.internextern = (<HTMLInputElement>event.target).value;}
       onUpdateDate(event: Event){this.date = (<HTMLInputElement>event.target).value;}
       onUpdatePlace(event: Event){this.place = (<HTMLInputElement>event.target).value;}
@@ -73,7 +73,7 @@ export class MitarbeiterComponent implements OnInit {
       console.log('event.source.name' + event.source.name);
       }
 
-      changeRadioValue(event: MatRadioChange){
+      changeRadioValue(event: MatRadioChange) {
         console.log('event.value: ' + event.value);
         this.category = event.value;
         console.log('category via event.value' + this.category);

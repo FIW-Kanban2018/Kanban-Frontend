@@ -13,8 +13,7 @@ export class TelefonatComponent implements OnInit {
 
   constructor(private telefonatService: TelefonatService,
               public snackBarRef: MatSnackBar) {}
-
-  caller = '';
+              title= '';
   phoneNumber = '';
   message = '';
   category = '';
@@ -41,7 +40,7 @@ export class TelefonatComponent implements OnInit {
   }
 
   setData(){
-    this.map.set('caller', this.caller)
+    this.map.set('title', this.title)
       .set('message', this.message)
       .set('phonenumber', this.phoneNumber)
       .set('date', this.date)
@@ -49,7 +48,7 @@ export class TelefonatComponent implements OnInit {
       .set('category', this.category);
 
 
-    console.log('caller: ' + this.caller);
+    console.log('title: ' + this.title);
     console.log('phone: ' + this.phoneNumber);
     console.log('message: ' + this.message);
     console.log('date: ' + this.date);
@@ -57,8 +56,8 @@ export class TelefonatComponent implements OnInit {
     console.log('category: ' + this.category);
   }
 
-  onUpdateCaller(event: Event) {
-    this.caller = (<HTMLInputElement>event.target).value;
+  onUpdateTitle(event: Event) {
+    this.title = (<HTMLInputElement>event.target).value;
   }
 
   onUpdatePhone(event: Event) {

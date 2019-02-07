@@ -11,7 +11,7 @@ export class SonstigesComponent implements OnInit {
 
   constructor(private sonstigesService: SonstigesService, public snackBarRef: MatSnackBar) { }
 
-  task = '';
+  title = '';
   deadline = '';
   todolist = '';
   posttask = '';                        // (Folgeaktivität)
@@ -32,7 +32,7 @@ export class SonstigesComponent implements OnInit {
   }
 
   setData(){
-    this.map.set('task', this.task)
+    this.map.set('title', this.title)
       .set('deadline', this.deadline)
       .set('todolist', this.todolist)
       .set('posttask', this.posttask)
@@ -40,7 +40,7 @@ export class SonstigesComponent implements OnInit {
       .set('cardCategory', this.cardCategory)
       .set('category', this.category);
 
-    console.log('task' + this.task);
+    console.log('title' + this.title);
     console.log('deadline' + this.deadline);
     console.log('todolist'+ this.todolist);
     console.log('posttask'+ this.posttask);
@@ -48,8 +48,8 @@ export class SonstigesComponent implements OnInit {
     console.log('category'+ this.category);
   }
 
-  onUpdateTask(event:Event) {
-    this.task = (<HTMLInputElement> event.target).value;
+  onUpdateTitle(event:Event) {
+    this.title = (<HTMLInputElement> event.target).value;
   }
   onUpdateDeadline(event:Event){
     this.deadline = (<HTMLInputElement>event.target).value;

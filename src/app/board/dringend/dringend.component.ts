@@ -13,7 +13,7 @@ export class DringendComponent implements OnInit {
   constructor(public snackBarRef: MatSnackBar,
               public dringendService: DringendService) { }
 
-  task = '';
+  title = '';
   deadline = '';
   category = '';
   cardCategory = '';
@@ -36,17 +36,17 @@ export class DringendComponent implements OnInit {
     this.snackBarRef.open('Karte wurde angelegt!', '', {duration: 2000});
   }
   setData() {
-    this.map.set('task', this.task)
+    this.map.set('title', this.title)
       .set('deadline', this.deadline)
       .set('category', this.category)
       .set('cardCategory', 'dringend');
 
-    console.log('task: ' + this.task);
+    console.log('title: ' + this.title);
     console.log('deadline' + this.deadline);
     console.log('category' + this.category);
   }
-    onUpdateTask(event: Event) {
-    this.task = (<HTMLInputElement>event.target).value; }
+    onUpdateTitle(event: Event) {
+    this.title = (<HTMLInputElement>event.target).value; }
    onUpdateDeadline(event: Event) {
     this.deadline = (<HTMLInputElement>event.target).value; }
 
