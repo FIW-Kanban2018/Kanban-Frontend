@@ -23,10 +23,10 @@ export class BoardComponent implements OnInit {
 
   constructor(private dialog: MatDialog, private telefonatService: TelefonatService, private http: HttpClient) { }
 
-  urlServerGeschaeftszimmer = 'http://localhost:8080/telefonat/geschaeftszimmer';
-  urlServerReferat = 'http://localhost:8080/telefonat/referat';
-  urlServerTermine = 'http://localhost:8080/telefonat/termine';
-  urlServerDone = 'http://localhost:8080/telefonat/done';
+  urlServerGeschaeftszimmer = 'http://localhost:8080/category/geschaeft';
+  urlServerReferat = 'http://localhost:8080/category/referatsueber';
+  urlServerTermine = 'http://localhost:8080/category/langfristig';
+  urlServerDone = 'http://localhost:8080/category/done';
 
 
   // todo = [
@@ -45,10 +45,29 @@ export class BoardComponent implements OnInit {
   // ];
 
   telefonatList: any;
-  geschaeftzimmerList: any;
+  geschaeftszimmerList: any;
   refList: any;
   termineList: any;
   doneList1: any;
+
+ ngOnInit() {
+    // this.getTelefonatData();
+    // this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
+    this.getAllGeschaeftszimmerData();
+    this.getAllReferatData();
+    this.getDoneData();
+    this.getTemineData();
+ }
+
+  // getTelefonatData(){
+  //   console.log('test Get data');
+  //   console.log('this: ' , this);
+  //   this.telefonatService.getAllTelefonatCards().subscribe((data) =>
+  //   {
+  //     console.log(data);
+  //     this.telefonatList = data;
+  //   });
+  // }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -61,38 +80,21 @@ export class BoardComponent implements OnInit {
     }
   }
 
- ngOnInit() {
-    this.getTelefonatData();
-    this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
-    this.getAllGeschaeftszimmerData();
-    this.getAllReferatData();
-    this.getDoneData();
- }
-
-  getTelefonatData(){
-    console.log('test Get data');
-    console.log('this: ' , this);
-    this.telefonatService.getAllTelefonatCards().subscribe((data) =>
-    {
-      console.log(data);
-      this.telefonatList = data;
-    });
-  }
   getAllGeschaeftszimmerData() {
     console.log('test Geschaeftszimmer get Data');
     console.log('this: ', this);
-    const urlGeschaeft = this.urlServerGeschaeftszimmer + '/all';
-    this.http.get(urlGeschaeft).subscribe((data) => {
-      console.log(data);
-      this.geschaeftzimmerList = data;
+    this.http.get(this.urlServerGeschaeftszimmer).subscribe((data) => {
+      console.log("geschaeft-data: " + data);
+      this.geschaeftszimmerList = data;
+      console.log("geschaeftszimmerList: " + data);
     });
   }
 
   getAllReferatData() {
     console.log('test Referat get Data');
     console.log('this: ', this);
-    const urlReferat = this.urlServerReferat +'/all';
-    this.http.get(urlReferat).subscribe((data) => {
+    this.http.get(this.urlServerReferat).subscribe((data) => {
+
       this.refList = data;
     });
   }
@@ -100,8 +102,7 @@ export class BoardComponent implements OnInit {
   getTemineData() {
     console.log('test Termine get Data');
     console.log('this: ', this);
-    const urlTermine = this.urlServerTermine +'/all';
-    this.http.get(urlTermine).subscribe((data) => {
+    this.http.get(this.urlServerTermine).subscribe((data) => {
       this.termineList = data;
     });
   }
@@ -109,8 +110,7 @@ export class BoardComponent implements OnInit {
   getDoneData() {
     console.log('test Done get Data');
     console.log('this: ', this);
-    const urlDone = this.urlServerDone +'/all';
-    this.http.get(urlDone).subscribe((data) => {
+    this.http.get(this.urlServerDone).subscribe((data) => {
       this.doneList1= data;
     });
   }

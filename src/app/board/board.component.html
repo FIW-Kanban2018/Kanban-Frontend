@@ -52,9 +52,12 @@
             <div class="dad-box" *ngFor="let item of telefonatList" cdkDrag>{{item.caller}} - {{item.date}}</div>
         </div>-->
 
-        <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="refList" [cdkDropListConnectedTo]=
-          "[geschaeftszimmerList, doneList1, termineList]" class="dad-list, leereSaeule" (cdkDropListDropped)="drop($event)">
-          <div class="dad-box" *ngFor="let item of relList" cdkDrag>{{item.id}} - {{item.cardCategory}}></div>
+        <div cdkDropList #doneList="cdkDropList"
+             [cdkDropListData]="refList"
+             [cdkDropListConnectedTo]="[geschaeftszimmerList, doneList1, termineList]"
+             class="dad-list, leereSaeule"
+             (cdkDropListDropped)="drop($event)">
+          <div class="dad-box" *ngFor="let item of refList" cdkDrag>{{item.id}} - {{item.cardCategory}}</div>
         </div>
 
       </mat-card-content>
