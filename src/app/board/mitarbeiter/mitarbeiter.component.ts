@@ -46,7 +46,7 @@ export class MitarbeiterComponent implements OnInit {
       .set('place', this.place)
       .set('aufgabe', this.task)
       .set('cardCategory', 'mitarbeiter')
-      .set('catergory', this.category);
+      .set('category', this.category);
 
 
         console.log('title', this.title);
@@ -58,7 +58,8 @@ export class MitarbeiterComponent implements OnInit {
         console.log('category' + this.category);
       }
 
-      onUpdateTitle(event: Event) {this.title = (<HTMLInputElement>event.target).value;}
+      onUpdateTitle(event: Event) {this.title = (<HTMLInputElement>event.target).value;
+  console.log('title: ' + this.title)}
       onUpdateDOB(event: Event) {this.dob = (<HTMLInputElement>event.target).value;}
       // onUpdateInternExtern(event: Event){this.internextern = (<HTMLInputElement>event.target).value;}
       onUpdateDate(event: Event){this.date = (<HTMLInputElement>event.target).value;}

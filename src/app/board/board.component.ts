@@ -64,7 +64,7 @@ export class BoardComponent implements OnInit {
     else if(cardCategory === 'telefonat') return 'green'
     else if(cardCategory === 'wanderkarte') return 'yellow'
     else if(cardCategory === 'veranstaltung') return 'orange'
-    else if(cardCategory === 'mitarbeiteranmelden') return 'blue'
+    else if(cardCategory === 'mitarbeiter') return 'blue'
     else if(cardCategory === 'sonstiges') return 'violet';
   }
 
