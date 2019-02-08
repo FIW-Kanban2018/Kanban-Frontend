@@ -60,11 +60,11 @@ export class BoardComponent implements OnInit {
   }
 
   getColor(cardCategory: String) {
-    if(cardCategory === 'dringend') return '#D0336B'
+    if(cardCategory === 'dringend') return '#DC6690'
     else if(cardCategory === 'telefonat') return '#FFDE75'
-    else if(cardCategory === 'wanderkarte') return '#99B9CC'
+    else if(cardCategory === 'wanderkarte') return '#6695B3'
     else if(cardCategory === 'veranstaltung') return '#E7CFDA'
-    else if(cardCategory === 'mitarbeiter') return '#ACD574'
+    else if(cardCategory === 'mitarbeiter') return '#C7E3A2'
     else if(cardCategory === 'sonstiges') return '#CCF1FC';
   }
 
