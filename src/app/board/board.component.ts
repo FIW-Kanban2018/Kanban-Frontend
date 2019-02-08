@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { TelefonatComponent } from './telefonat/telefonat.component';
 import { DringendComponent} from './dringend/dringend.component';
@@ -33,6 +33,8 @@ export class BoardComponent implements OnInit {
   termineList: any;
   doneList1: any;
 
+
+
  ngOnInit() {
     // this.getTelefonatData();
     // this.telefonatService.newCardEvent.subscribe(this.getTelefonatData);
@@ -55,6 +57,15 @@ export class BoardComponent implements OnInit {
         event.previousIndex,
         event.currentIndex);
     }
+  }
+
+  getColor(cardCategory: String) {
+    if(cardCategory === 'dringend') return 'red'
+    else if(cardCategory === 'telefonat') return 'green'
+    else if(cardCategory === 'wanderkarte') return 'yellow'
+    else if(cardCategory === 'veranstaltung') return 'orange'
+    else if(cardCategory === 'mitarbeiteranmelden') return 'blue'
+    else if(cardCategory === 'sonstiges') return 'violet';
   }
 
   getAllGeschaeftszimmerData() {

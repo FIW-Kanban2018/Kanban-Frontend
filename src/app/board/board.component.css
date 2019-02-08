@@ -1,3 +1,11 @@
+.dringend {
+  color: greenyellow;
+}
+
+.telefonat {
+  color: darkred;
+}
+
 .grid-container {
   height: 93vh;
   /*max-height: 100vmax;*/
