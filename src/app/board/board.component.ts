@@ -60,12 +60,12 @@ export class BoardComponent implements OnInit {
   }
 
   getColor(cardCategory: String) {
-    if(cardCategory === 'dringend') return 'red'
-    else if(cardCategory === 'telefonat') return 'green'
-    else if(cardCategory === 'wanderkarte') return 'yellow'
-    else if(cardCategory === 'veranstaltung') return 'orange'
-    else if(cardCategory === 'mitarbeiter') return 'blue'
-    else if(cardCategory === 'sonstiges') return 'violet';
+    if(cardCategory === 'dringend') return '#C40046'
+    else if(cardCategory === 'telefonat') return '#FFD347'
+    else if(cardCategory === 'wanderkarte') return '#337299'
+    else if(cardCategory === 'veranstaltung') return '#D09EB6'
+    else if(cardCategory === 'mitarbeiter') return '#90C745'
+    else if(cardCategory === 'sonstiges') return '#99E3FA';
   }
 
   getAllGeschaeftszimmerData() {
