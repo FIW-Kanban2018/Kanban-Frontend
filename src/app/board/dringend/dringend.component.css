@@ -1,4 +1,7 @@
-
+.text-Center {
+  text-align: center;
+  font-size: 2vw;
+}
 
 .example-container {
   display: flex;

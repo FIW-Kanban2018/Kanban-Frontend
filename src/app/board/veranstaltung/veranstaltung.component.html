@@ -6,12 +6,11 @@
   <mat-card-content class="example-container">
 
     <mat-radio-group class="radioinhalt" required (change)="changeRadioValue($event)">
-      <br><br>
+      <br>
       <mat-radio-button value="geschaeft">Geschäftzimmer</mat-radio-button>
       <mat-radio-button value="referatsueber">Referatsübergreifend</mat-radio-button>
       <mat-radio-button value="langfristig">langfristige Termine</mat-radio-button>
     </mat-radio-group>
-    <br/>
 
     <mat-form-field>
       <input matInput type="text" placeholder="Titel" (input)="onUpdateTitle($event)">
