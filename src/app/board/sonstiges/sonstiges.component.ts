@@ -37,7 +37,7 @@ export class SonstigesComponent implements OnInit {
       .set('todolist', this.todolist)
       .set('posttask', this.posttask)
      // .set('lastmodified', this.lastmodified)
-      .set('cardCategory', this.cardCategory)
+      .set('cardCategory', 'sonstiges')
       .set('category', this.category);
 
     console.log('title' + this.title);

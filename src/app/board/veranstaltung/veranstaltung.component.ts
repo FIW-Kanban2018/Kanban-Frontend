@@ -57,7 +57,7 @@ export class VeranstaltungComponent implements OnInit {
       .set('todolist', this.todolist)
       .set('deadline', this.deadline)
       .set('category', this.category)
-      .set('cardCategory', this.cardCategory)
+      .set('cardCategory', 'veranstaltung')
 
 
     console.log('title: ' + this.title);
