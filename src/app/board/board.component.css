@@ -98,6 +98,7 @@
   height: 85vh;
   margin: auto;
   overflow-y: scroll;
+
 }
 
 .person-icon {
@@ -225,9 +226,12 @@
   box-sizing: border-box;
   cursor: move;
   background: white;
-  font-size: 14px;
-  height: 150px;
-  width: 100%;
+  font-size: 1vw;
+  height: 14vh;
+  width: 13.5vw;
+  border: 3px white solid;
+  border-radius: 8px;
+
 
 }
 
@@ -248,7 +252,7 @@
 }
 
 .dad-box:last-child {
-  border: none;
+/*  border: none;*/
 }
 
 .dad-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
