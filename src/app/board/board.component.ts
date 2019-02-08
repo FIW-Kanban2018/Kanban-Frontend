@@ -64,7 +64,7 @@ export class BoardComponent implements OnInit {
     else if(cardCategory === 'telefonat') return '#FFDE75'
     else if(cardCategory === 'wanderkarte') return '#6695B3'
     else if(cardCategory === 'veranstaltung') return '#E7CFDA'
-    else if(cardCategory === 'mitarbeiter') return '#ACD574'
+    else if(cardCategory === 'mitarbeiter') return '#C7E3A2'
     else if(cardCategory === 'sonstiges') return '#CCF1FC';
   }
 
