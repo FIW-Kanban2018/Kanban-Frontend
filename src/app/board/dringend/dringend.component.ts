@@ -47,6 +47,7 @@ export class DringendComponent implements OnInit {
   }
     onUpdateTitle(event: Event) {
     this.title = (<HTMLInputElement>event.target).value; }
+
    onUpdateDeadline(event: Event) {
     this.deadline = (<HTMLInputElement>event.target).value; }
 
